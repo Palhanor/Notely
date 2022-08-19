@@ -1,18 +1,18 @@
-/* 
-  Fazer ele receber uma nota da home
-    1. Pode ser vazia ao clicar em criar nova nota
-      - Nesse caso estidando sera true e abrira o editor
-      - Assim, apos ser editada, esta deve ser salva no db
-    2. Pode ser com conteudo ao clicar em uma nota
-      - Nesse caso estidando sera false e abrira o visualizador
-      - Assim, apos ser editada, deve atualizar o db
-*/
+/*  Fazer ele receber uma nota da home
+      1. Pode ser vazia ao clicar em criar nova nota
+        - Nesse caso estidando sera true e abrira o editor
+        - Assim, apos ser editada, esta deve ser salva no db
+      2. Pode ser com conteudo ao clicar em uma nota
+        - Nesse caso estidando sera false e abrira o visualizador
+        - Assim, apos ser editada, deve atualizar o db */
 
-import React, { useState } from "react";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import React, { useContext, useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import Markdown from "react-native-markdown-display";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
+import { NotasContext } from "../context/NotasContext";
+import { NavigationStackProps } from "../interface/Screens";
 import {
   StyleSheet,
   Text,
@@ -22,23 +22,24 @@ import {
 } from "react-native";
 
 export default function FormModal() {
-  const route = useRoute();
-  const { setNotas } = route.params;
+  const { adicionaNota } = useContext(NotasContext);
+  const navigation = useNavigation<NavigationStackProps>();
 
-  const navigation = useNavigation();
+  const [editando, setEditando] = useState<boolean>(true);
   const [titulo, setTitulo] = useState<string>("");
   const [texto, setTexto] = useState<string>("");
-  const [editando, setEditando] = useState<boolean>(true);
 
   const editIcon = <Icon name="pencil-outline" size={30} color="#FFF" />;
   const visualizeIcon = <Icon name="note-outline" size={30} color="#FFF" />;
 
   const adicionarNota = () => {
     if (titulo && texto) {
-      setNotas((notas: INota[]) => [
-        { id: notas.length + 1, titulo: titulo, texto },
-        ...notas,
-      ]);
+      const novaNota: INota = {
+        id: false,
+        titulo: titulo,
+        texto: texto,
+      };
+      adicionaNota(novaNota);
       setTitulo("");
       setTexto("");
       navigation.navigate("Home");
@@ -92,7 +93,6 @@ export default function FormModal() {
 const styles = StyleSheet.create({
   containerModal: {
     flex: 1,
-    padding: 16,
     backgroundColor: "#F5F8F5",
   },
   input: {
@@ -101,6 +101,8 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     padding: 8,
     fontSize: 20,
+    marginHorizontal: 16,
+    marginTop: 16,
   },
   multiline: {
     width: "100%",
@@ -108,6 +110,7 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     padding: 8,
     textAlignVertical: "top",
+    marginHorizontal: 16,
   },
   botaoEditarVisualizar: {
     backgroundColor: "#B5CBB7",
@@ -116,18 +119,17 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     padding: 12,
     position: "absolute",
-    bottom: 150,
+    bottom: 80,
     right: 16,
     zIndex: 1,
   },
   botaoSalvar: {
     backgroundColor: "#91A292",
     width: "100%",
-    borderRadius: 5,
     padding: 18,
     position: "absolute",
-    bottom: 50,
-    left: 16,
+    bottom: 0,
+    left: 0,
     zIndex: 1,
   },
   textoBotaoSalvar: {

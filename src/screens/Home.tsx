@@ -1,11 +1,10 @@
-// Criar sistema de abrir a nota (visualizar e editar)
-// Criar sistema de apagar a nota
-
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Markdown from "react-native-markdown-display";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
+import { NotasContext } from "../context/NotasContext";
+import { NavigationStackProps } from "../interface/Screens";
 import {
   StyleSheet,
   Text,
@@ -16,17 +15,17 @@ import {
 } from "react-native";
 
 export default function Home() {
-  const [notas, setNotas] = useState<INota[]>([]);
+  const { notas } = useContext(NotasContext);
+  const navigation = useNavigation<NavigationStackProps>();
 
-  const navigation = useNavigation();
   const adicionarIcon = <Icon name="plus" size={30} color="#FFF" />;
 
-  const CardNota = ({ item }: { item: INota }) => {
+  const Card = ({ card }: { card: INota }) => {
     return (
       <View>
-        <Text style={styles.tituloNota}>{item.titulo}</Text>
+        <Text style={styles.tituloNota}>{card.titulo}</Text>
         <View style={styles.nota}>
-          <Markdown>{item.texto}</Markdown>
+          <Markdown>{card.texto}</Markdown>
         </View>
       </View>
     );
@@ -37,7 +36,7 @@ export default function Home() {
       <StatusBar />
       <TouchableOpacity
         style={styles.botaoCriar}
-        onPress={() => navigation.navigate("Nota", { setNotas })}
+        onPress={() => navigation.navigate("Nota")}
       >
         <Text style={styles.centralizar}>{adicionarIcon}</Text>
       </TouchableOpacity>
@@ -45,7 +44,7 @@ export default function Home() {
         <FlatList
           data={[...notas]}
           style={styles.lista}
-          renderItem={({ item }) => <CardNota item={item} />}
+          renderItem={({ item }) => <Card card={item} />}
           keyExtractor={({ id }) => `${id}`}
         />
       ) : (

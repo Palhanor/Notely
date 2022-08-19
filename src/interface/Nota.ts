@@ -1,5 +1,5 @@
 export default interface INota {
-    id: number;
+    id: number | boolean;
     titulo: string;
     texto: string;
 }
