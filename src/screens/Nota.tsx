@@ -93,7 +93,7 @@ export default function FormModal() {
 const styles = StyleSheet.create({
   containerModal: {
     flex: 1,
-    backgroundColor: "#F5F8F5",
+    backgroundColor: "#F5F7F8",
   },
   input: {
     width: "100%",
@@ -113,7 +113,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 16,
   },
   botaoEditarVisualizar: {
-    backgroundColor: "#B5CBB7",
+    backgroundColor: "#0E677A",
     width: 60,
     height: 60,
     borderRadius: 60,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     zIndex: 1,
   },
   botaoSalvar: {
-    backgroundColor: "#91A292",
+    backgroundColor: "#0E677A",
     width: "100%",
     padding: 18,
     position: "absolute",

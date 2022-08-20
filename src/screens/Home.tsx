@@ -57,13 +57,13 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F8F5",
+    backgroundColor: "#F5F7F8",
     alignItems: "center",
     justifyContent: "center",
     padding: 16,
   },
   botaoCriar: {
-    backgroundColor: "#B5CBB7",
+    backgroundColor: "#0E677A",
     width: 60,
     height: 60,
     borderRadius: 60,
@@ -84,9 +84,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 16,
     marginBottom: 22,
-    backgroundColor: "#F8FAF8",
-    elevation: 3,
-    shadowColor: "#91A292",
+    backgroundColor: "#FBFDFE",
+    elevation: 2,
+    shadowColor: "#1D7C92",
     overflow: "hidden",
   },
   tituloNota: {
