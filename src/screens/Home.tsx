@@ -6,6 +6,7 @@ import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
 import globalStyle from "../styles";
+import Header from "../components/Header";
 import {
   StyleSheet,
   Text,
@@ -35,21 +36,20 @@ export default function Home() {
   return (
     <View style={styles.container}>
       <StatusBar />
+      <Header>Notely</Header>
       <TouchableOpacity
         style={styles.botaoCriar}
         onPress={() => navigation.navigate("Nota")}
       >
         <Text style={styles.centralizar}>{adicionarIcon}</Text>
       </TouchableOpacity>
-      {notas.length > 0 ? (
+      {notas.length > 0 && (
         <FlatList
           data={[...notas]}
           style={styles.lista}
           renderItem={({ item }) => <Card card={item} />}
           keyExtractor={({ id }) => `${id}`}
         />
-      ) : (
-        <Text>Sem notas no momento...</Text>
       )}
     </View>
   );
@@ -60,7 +60,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F5F7F8",
     alignItems: "center",
-    justifyContent: "center",
   },
   botaoCriar: {
     backgroundColor: "#0E677A",
@@ -75,7 +74,7 @@ const styles = StyleSheet.create({
   },
   lista: {
     width: "100%",
-    marginTop: 12,
+    paddingTop: 16,
   },
   centralizar: {
     textAlign: "center",

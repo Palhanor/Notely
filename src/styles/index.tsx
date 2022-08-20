@@ -26,7 +26,7 @@ const globalStyle = StyleSheet.create({
     fontSize: 20,
     marginBottom: 10,
     marginHorizontal: 24,
-    marginTop: 8,
+    marginTop: 16,
   },
 });
 

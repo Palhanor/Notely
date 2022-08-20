@@ -14,6 +14,7 @@ import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
 import globalStyle from "../styles";
+import Header from "../components/Header";
 import {
   StyleSheet,
   Text,
@@ -49,6 +50,7 @@ export default function FormModal() {
 
   return (
     <View style={styles.containerModal}>
+      <Header>Nota</Header>
       {editando ? (
         <>
           <TextInput
@@ -97,7 +99,6 @@ const styles = StyleSheet.create({
   containerModal: {
     flex: 1,
     backgroundColor: "#F5F7F8",
-    paddingTop: 16,
   },
   input: {
     width: "100%",
@@ -105,6 +106,7 @@ const styles = StyleSheet.create({
     padding: 8,
     fontSize: 20,
     marginHorizontal: 16,
+    marginTop: 16,
   },
   multiline: {
     width: "100%",
