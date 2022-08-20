@@ -1,9 +1,6 @@
 /* AJEITAR PROBLEMAS
-  1. Corrigir o estilo da visualização da nota na aba Nota
-  2. Corrigir o estilo da visualização da nota na aba Home
-  3. Criar os estilos globais para a exibição dos cards
-  4. Adicionar uma tipografia especifica
-  5. Criar um Header estilizado
+  1. Adicionar uma tipografia especifica
+  2. Criar um Header estilizado
 */
 
 /* FEATURES FUTURAS
@@ -28,6 +25,7 @@
 */
 
 import React from "react";
+import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Home from "./src/screens/Home";
@@ -40,6 +38,7 @@ const Stack = createNativeStackNavigator<RootStackProps>();
 export default function App() {
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor={"#075364"} />
       <NotasContextProvider>
         <Stack.Navigator
           initialRouteName="Home"

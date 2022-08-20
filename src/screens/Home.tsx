@@ -5,6 +5,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
+import globalStyle from "../styles";
 import {
   StyleSheet,
   Text,
@@ -23,8 +24,8 @@ export default function Home() {
   const Card = ({ card }: { card: INota }) => {
     return (
       <View>
-        <Text style={styles.tituloNota}>{card.titulo}</Text>
-        <View style={styles.nota}>
+        <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
+        <View style={globalStyle.nota}>
           <Markdown>{card.texto}</Markdown>
         </View>
       </View>
@@ -60,7 +61,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F7F8",
     alignItems: "center",
     justifyContent: "center",
-    padding: 16,
   },
   botaoCriar: {
     backgroundColor: "#0E677A",
@@ -76,24 +76,6 @@ const styles = StyleSheet.create({
   lista: {
     width: "100%",
     marginTop: 12,
-  },
-  nota: {
-    width: "100%",
-    borderColor: "#EEEEEE",
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 16,
-    marginBottom: 22,
-    backgroundColor: "#FBFDFE",
-    elevation: 2,
-    shadowColor: "#1D7C92",
-    overflow: "hidden",
-  },
-  tituloNota: {
-    fontWeight: "600",
-    fontSize: 17,
-    marginBottom: 10,
-    marginLeft: 8,
   },
   centralizar: {
     textAlign: "center",

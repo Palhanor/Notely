@@ -13,6 +13,7 @@ import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
+import globalStyle from "../styles";
 import {
   StyleSheet,
   Text,
@@ -73,8 +74,10 @@ export default function FormModal() {
         </>
       ) : (
         <>
-          <Text style={styles.input}>{titulo}</Text>
-          <Markdown>{texto}</Markdown>
+          <Text style={globalStyle.tituloNotaVisualizacao}>{titulo}</Text>
+          <View style={globalStyle.nota}>
+            <Markdown>{texto}</Markdown>
+          </View>
           <TouchableOpacity
             style={styles.botaoEditarVisualizar}
             onPress={() => setEditando(true)}
@@ -94,15 +97,14 @@ const styles = StyleSheet.create({
   containerModal: {
     flex: 1,
     backgroundColor: "#F5F7F8",
+    paddingTop: 16,
   },
   input: {
     width: "100%",
     height: 42,
-    marginVertical: 8,
     padding: 8,
     fontSize: 20,
     marginHorizontal: 16,
-    marginTop: 16,
   },
   multiline: {
     width: "100%",
