@@ -1,6 +1,13 @@
 import { Dimensions, StyleSheet } from "react-native";
 
 const globalStyle = StyleSheet.create({
+  campoTitulo: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+  },
+  moreIcon: {
+    marginRight: 16,
+  },
   nota: {
     width: Dimensions.get("window").width - 32,
     borderColor: "#EEEEEE",

@@ -16,6 +16,11 @@
   * Adicionar uma nota inicial explicativa
   * Adicionar criação de tags
   * Adicionar atribuição de tags (cadernos?)
+  * Adicionar suporte a check-list
+  * Adicionar o check de itens do check-list
+  * Adicionar a exibição do markdown de forma simultânea
+  * Adicionar o uso de emojis
+  * Adicionar sistema para criar nota direto da Home
   * Adicionar um filtro
   * Adicionar um ordenador
   * Adicionar manipulação drag and drop
@@ -24,7 +29,7 @@
   * Adicionar cores para as notas (pela tag?)
   * Adicionar uma tipografia especifica
   * Adicionar a opção de deixar a nota retrátil na Home
-  * Menu da nota (?)
+  * Menu de criação da nota (?)
     * Expandir menu
     * Encolher menu
     * Visualizar
@@ -32,14 +37,20 @@
     * Salvar
     * Excluir
     * Adicionar (personalização)
+  * Menu da nota
+    * Excluir
+    * Visualizar
+    * Editar
+    * Selecionar
+    * Favoritar
 */
 
 import React from "react";
+import Home from "./src/screens/Home";
+import Nota from "./src/screens/Nota";
 import { StatusBar } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Home from "./src/screens/Home";
-import Nota from "./src/screens/Nota";
 import { NotasContextProvider } from "./src/context/NotasContext";
 import { RootStackProps } from "./src/interface/Screens";
 

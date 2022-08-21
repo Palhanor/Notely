@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Markdown from "react-native-markdown-display";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import FeatherIcons from "react-native-vector-icons/Feather";
 import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
@@ -14,21 +15,41 @@ import {
   StatusBar,
   TouchableOpacity,
   FlatList,
+  TouchableWithoutFeedback,
 } from "react-native";
 
 export default function Home() {
   const { notas } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
 
-  const adicionarIcon = <Icon name="plus" size={30} color="#FFF" />;
+  const adicionarIcon = (
+    <MaterialCommunityIcons name="plus" size={30} color="#FFF" />
+  );
+  const moreIcon = <FeatherIcons name="more-vertical" size={20} color="#000" />;
 
   const Card = ({ card }: { card: INota }) => {
+    function abrirNota() {
+      navigation.navigate("Nota", { nota: card });
+    }
+
+    function maisOpcoes() {
+      console.log("Abrindo as opções da nota");
+    }
+
     return (
       <View>
-        <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
-        <View style={globalStyle.nota}>
-          <Markdown>{card.texto}</Markdown>
+        <View style={globalStyle.campoTitulo}>
+          <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
+          <TouchableOpacity
+            style={globalStyle.moreIcon}
+            onPress={maisOpcoes}
+          >
+            <Text>{moreIcon}</Text>
+          </TouchableOpacity>
         </View>
+        <TouchableOpacity onPress={abrirNota} style={globalStyle.nota}>
+          <Markdown>{card.texto}</Markdown>
+        </TouchableOpacity>
       </View>
     );
   };
@@ -39,7 +60,11 @@ export default function Home() {
       <Header>Notely</Header>
       <TouchableOpacity
         style={styles.botaoCriar}
-        onPress={() => navigation.navigate("Nota")}
+        onPress={() =>
+          navigation.navigate("Nota", {
+            nota: { id: false, titulo: "", texto: "" },
+          })
+        }
       >
         <Text style={styles.centralizar}>{adicionarIcon}</Text>
       </TouchableOpacity>

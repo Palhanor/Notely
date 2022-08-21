@@ -1,13 +1,5 @@
-/*  Fazer ele receber uma nota da home
-      1. Pode ser vazia ao clicar em criar nova nota
-        - Nesse caso estidando sera true e abrira o editor
-        - Assim, apos ser editada, esta deve ser salva no db
-      2. Pode ser com conteudo ao clicar em uma nota
-        - Nesse caso estidando sera false e abrira o visualizador
-        - Assim, apos ser editada, deve atualizar o db */
-
 import React, { useContext, useState } from "react";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useRoute } from "@react-navigation/native";
 import Markdown from "react-native-markdown-display";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
@@ -24,28 +16,40 @@ import {
 } from "react-native";
 
 export default function FormModal() {
-  const { adicionaNota } = useContext(NotasContext);
+  const { adicionaNota, atualizaNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
+  const route = useRoute();
+  const notaRecebida: INota = route.params?.nota
 
-  const [editando, setEditando] = useState<boolean>(true);
-  const [titulo, setTitulo] = useState<string>("");
-  const [texto, setTexto] = useState<string>("");
+  const notaEmBranco = notaRecebida.id === false ? true : false
+
+  const [editando, setEditando] = useState<boolean>(notaEmBranco);
+  const [titulo, setTitulo] = useState<string>(notaRecebida.titulo);
+  const [texto, setTexto] = useState<string>(notaRecebida.texto);
 
   const editIcon = <Icon name="pencil-outline" size={30} color="#FFF" />;
   const visualizeIcon = <Icon name="note-outline" size={30} color="#FFF" />;
 
   const adicionarNota = () => {
-    if (titulo && texto) {
+    if (notaEmBranco && titulo && texto) {
       const novaNota: INota = {
         id: false,
         titulo: titulo,
         texto: texto,
       };
       adicionaNota(novaNota);
-      setTitulo("");
-      setTexto("");
+      navigation.navigate("Home");
+    } else if (!notaEmBranco && titulo && texto) {
+      const notaAtualizada: INota = {
+        id: notaRecebida.id,
+        titulo: titulo,
+        texto: texto,
+      };
+      atualizaNota(notaAtualizada);
       navigation.navigate("Home");
     }
+    setTitulo("");
+    setTexto("");
   };
 
   return (
