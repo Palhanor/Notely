@@ -3,7 +3,7 @@ import INota from "./Nota";
 
 export type RootStackProps = {
     "Home": undefined
-    "Nota": {nota: INota}
+    "Nota": { nota: INota }
 }
 
 export type NavigationStackProps = NativeStackNavigationProp<RootStackProps>

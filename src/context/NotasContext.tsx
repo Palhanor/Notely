@@ -7,6 +7,7 @@ const initialValues: INotasContext = {
   notas: [],
   adicionaNota: () => {},
   atualizaNota: () => {},
+  apagarNota: () => {},
 };
 
 export const NotasContext = createContext<INotasContext>(initialValues);
@@ -16,10 +17,11 @@ export function NotasContextProvider({ children }: { children: any }) {
 
   // Adiciona uma nova nota na lista de notas (Create)
   const adicionaNota = (nota: INota) => {
-    setNotas([
+    const novasNotas = [
       { id: IdGenerator(), titulo: nota.titulo, texto: nota.texto },
       ...notas,
-    ]);
+    ];
+    setNotas(novasNotas);
   };
 
   // Atualiza uma nota antiga reeditada (Update)
@@ -35,11 +37,15 @@ export function NotasContextProvider({ children }: { children: any }) {
   };
 
   // Apaga a nota que foi selecionada (Delete)
-  // const apagarNota = (nota: INota) => {
-  // }
+  const apagarNota = (nota: INota) => {
+    const novasNotas = notas.filter((notaAntiga) => notaAntiga.id !== nota.id);
+    setNotas(novasNotas);
+  };
 
   return (
-    <NotasContext.Provider value={{ notas, adicionaNota, atualizaNota }}>
+    <NotasContext.Provider
+      value={{ notas, adicionaNota, atualizaNota, apagarNota }}
+    >
       {children}
     </NotasContext.Provider>
   );

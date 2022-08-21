@@ -1,8 +1,7 @@
 import React, { useContext } from "react";
 import { useNavigation } from "@react-navigation/native";
 import Markdown from "react-native-markdown-display";
-import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import FeatherIcons from "react-native-vector-icons/Feather";
+import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import INota from "../interface/Nota";
 import { NotasContext } from "../context/NotasContext";
 import { NavigationStackProps } from "../interface/Screens";
@@ -15,35 +14,37 @@ import {
   StatusBar,
   TouchableOpacity,
   FlatList,
-  TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 
 export default function Home() {
-  const { notas } = useContext(NotasContext);
+  const { notas, apagarNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
 
-  const adicionarIcon = (
-    <MaterialCommunityIcons name="plus" size={30} color="#FFF" />
-  );
-  const moreIcon = <FeatherIcons name="more-vertical" size={20} color="#000" />;
+  const adicionarIcon = <Icon name="plus" size={30} color="#FFF" />;
+  const moreIcon = <Icon name="trash-can-outline" size={20} color="#000" />;
 
   const Card = ({ card }: { card: INota }) => {
     function abrirNota() {
       navigation.navigate("Nota", { nota: card });
     }
 
-    function maisOpcoes() {
-      console.log("Abrindo as opções da nota");
+    function deletar() {
+      Alert.alert(
+        "Apagar nota",
+        "Você tem certeza que deseja apagar esta nota?",
+        [
+          { text: "Cancelar" },
+          { text: "Apagar", onPress: () => apagarNota(card) },
+        ]
+      );
     }
 
     return (
       <View>
         <View style={globalStyle.campoTitulo}>
           <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
-          <TouchableOpacity
-            style={globalStyle.moreIcon}
-            onPress={maisOpcoes}
-          >
+          <TouchableOpacity style={globalStyle.moreIcon} onPress={deletar}>
             <Text>{moreIcon}</Text>
           </TouchableOpacity>
         </View>

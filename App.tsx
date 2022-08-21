@@ -1,34 +1,32 @@
 /* FEATURES FUTURAS
   1. Usar uma fonte diferente no Header
+  2. Adicionar uma nota inicial explicativa
   2. Incluir visualização em blocos
-  3. Abrir nota quando clicar nela
-  4. Alternar entre visualização e edição
-  5. Permitir salvar a nota editada
-  6. Poder apagar a nota aberta
-  7. Criar menu de personalização (Link, imagem, linha, negrito, italico, riscado, tabela...)
-  8. Adicionar um sistema de busca
-  9. Estabelcer um campo para notas favoritadas
-  10. Deixar que notas sejam favoritadas ou desfavoritadas
-  * Adicionar os três pontos ao lado direito do título da nota (excluir, favoritar...)
-  * Adicionar limite para o tamanho do título da nota
+  3. Implementar um sistema de busca
+  4. Implementar um sistema de ordenamento (criação, modificação, alfabético)
+  5. Criar menu de personalização (Link, imagem, linha, negrito, italico, riscado, tabela...)
+  6. Organizar um campo para notas favoritadas (Ficam no topo)
+  7. Fazer um sistema de favritar ou desfavoritar notas (Usar o menu dos cards)
+  8. Menu da nota (Três pontinhos?)
+    * Excluir
+    * Favoritar/desfavoritar
+    * Selecionar
   * Adicionar notas sem título (puxar a primeira linha ou um H1)
+  * Adicionar nota incurtada na Home
+  * Adicionar sistema de expansão e retração das notas na Home
   * Adicionar personalização para texto selecionado
-  * Adicionar uma nota inicial explicativa
-  * Adicionar criação de tags
-  * Adicionar atribuição de tags (cadernos?)
-  * Adicionar suporte a check-list
-  * Adicionar o check de itens do check-list
+  * Adicionar criação de tags (Ou cadernos?)
+  * Adicionar atribuição de tags (Ou cadernos?)
+  * Adicionar suporte a check-list com markdown
+  * Adicionar o check de itens do check-list no markdown
   * Adicionar a exibição do markdown de forma simultânea
-  * Adicionar o uso de emojis
   * Adicionar sistema para criar nota direto da Home
   * Adicionar um filtro
-  * Adicionar um ordenador
   * Adicionar manipulação drag and drop
   * Adicionar seleção (multipla) de itens
   * Adicionar personalização de estilo (tamanho da fonte, familia da fonte, cor de fundo, cor da fonte, background)
-  * Adicionar cores para as notas (pela tag?)
-  * Adicionar uma tipografia especifica
-  * Adicionar a opção de deixar a nota retrátil na Home
+  * Adicionar cores para as notas (Pela tag? Por nota?)
+  * Adicionar uma tipografia personalizada para o app
   * Menu de criação da nota (?)
     * Expandir menu
     * Encolher menu
@@ -37,12 +35,6 @@
     * Salvar
     * Excluir
     * Adicionar (personalização)
-  * Menu da nota
-    * Excluir
-    * Visualizar
-    * Editar
-    * Selecionar
-    * Favoritar
 */
 
 import React from "react";

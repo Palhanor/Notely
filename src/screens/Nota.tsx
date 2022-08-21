@@ -19,9 +19,9 @@ export default function FormModal() {
   const { adicionaNota, atualizaNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
   const route = useRoute();
-  const notaRecebida: INota = route.params?.nota
+  const notaRecebida: INota = route.params?.nota;
 
-  const notaEmBranco = notaRecebida.id === false ? true : false
+  const notaEmBranco = notaRecebida.id === false ? true : false;
 
   const [editando, setEditando] = useState<boolean>(notaEmBranco);
   const [titulo, setTitulo] = useState<string>(notaRecebida.titulo);
