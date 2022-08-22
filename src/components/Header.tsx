@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackProps } from "../interface/Screens";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { HeaderProp } from "../interface/Props";
 
-export default function Header({ children }: { children: string }) {
+export default function Header({ children }: HeaderProp) {
   const navigation = useNavigation<NavigationStackProps>();
 
   const retrnarIcon = <Icon name="chevron-left" size={30} color="#FFF" />;

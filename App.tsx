@@ -22,7 +22,7 @@
     * Favoritar/desfavoritar
     * Selecionar
   * Adicionar uma lixeira para onde vão as notas apagadas
-  * Adicionar sistema de expansão e retração das notas na Home
+  * Adicionar sistema de expansão e retração das notas na Home (Pressionar nota)
   * Adicionar personalização para texto selecionado
   * Adicionar criação de tags (Ou cadernos?)
   * Adicionar atribuição de tags (Ou cadernos?)
@@ -30,7 +30,7 @@
   * Adicionar o check de itens do check-list no markdown
   * Adicionar a exibição do markdown de forma simultânea
   * Adicionar sistema para criar nota direto da Home
-  * Adicionar um filtro
+  * Adicionar um filtro (tags, datas...)
   * Adicionar manipulação drag and drop
   * Adicionar seleção (multipla) de itens
   * Adicionar personalização de estilo (tamanho da fonte, familia da fonte, cor de fundo, cor da fonte, background)
