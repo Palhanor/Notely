@@ -22,11 +22,12 @@ export default function Home() {
   const navigation = useNavigation<NavigationStackProps>();
 
   const adicionarIcon = <Icon name="plus" size={30} color="#FFF" />;
-  const moreIcon = <Icon name="trash-can-outline" size={20} color="#000" />;
+  const apagarIcon = <Icon name="trash-can-outline" size={20} color="#000" />;
 
   const Card = ({ card }: { card: INota }) => {
     function abrirNota() {
       navigation.navigate("Nota", { nota: card });
+      // console.log(card.texto)
     }
 
     function deletar() {
@@ -44,11 +45,11 @@ export default function Home() {
       <View>
         <View style={globalStyle.campoTitulo}>
           <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
-          <TouchableOpacity style={globalStyle.moreIcon} onPress={deletar}>
-            <Text>{moreIcon}</Text>
+          <TouchableOpacity style={globalStyle.apagarIcon} onPress={deletar}>
+            <Text>{apagarIcon}</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity onPress={abrirNota} style={globalStyle.nota}>
+        <TouchableOpacity onPress={abrirNota} style={globalStyle.notaCard}>
           <Markdown>{card.texto}</Markdown>
         </TouchableOpacity>
       </View>

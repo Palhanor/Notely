@@ -13,6 +13,8 @@ import {
   View,
   TextInput,
   TouchableOpacity,
+  ScrollView,
+  Dimensions,
 } from "react-native";
 
 export default function FormModal() {
@@ -31,7 +33,7 @@ export default function FormModal() {
   const visualizeIcon = <Icon name="note-outline" size={30} color="#FFF" />;
 
   const adicionarNota = () => {
-    if (notaEmBranco && titulo && texto) {
+    if (notaEmBranco && texto) {
       const novaNota: INota = {
         id: false,
         titulo: titulo,
@@ -39,7 +41,7 @@ export default function FormModal() {
       };
       adicionaNota(novaNota);
       navigation.navigate("Home");
-    } else if (!notaEmBranco && titulo && texto) {
+    } else if (!notaEmBranco && texto) {
       const notaAtualizada: INota = {
         id: notaRecebida.id,
         titulo: titulo,
@@ -80,10 +82,14 @@ export default function FormModal() {
         </>
       ) : (
         <>
-          <Text style={globalStyle.tituloNotaVisualizacao}>{titulo}</Text>
-          <View style={globalStyle.nota}>
-            <Markdown>{texto}</Markdown>
-          </View>
+          <ScrollView>
+            <Text style={globalStyle.tituloNotaVisualizacao}>
+              {titulo !== "" ? titulo : "Sem nome"}
+            </Text>
+            <View style={globalStyle.notaAberta}>
+              <Markdown>{texto}</Markdown>
+            </View>
+          </ScrollView>
           <TouchableOpacity
             style={styles.botaoEditarVisualizar}
             onPress={() => setEditando(true)}
@@ -105,7 +111,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#F5F7F8",
   },
   input: {
-    width: "100%",
+    width: Dimensions.get("window").width - 32,
     height: 42,
     padding: 8,
     fontSize: 20,
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
   },
   multiline: {
-    width: "100%",
+    width: Dimensions.get("window").width - 32,
     height: "60%",
     marginVertical: 8,
     padding: 8,

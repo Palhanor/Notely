@@ -5,15 +5,29 @@ const globalStyle = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  moreIcon: {
+  apagarIcon: {
     marginRight: 16,
   },
-  nota: {
+  notaAberta: {
     width: Dimensions.get("window").width - 32,
     borderColor: "#EEEEEE",
     borderWidth: 1,
     borderRadius: 10,
-    paddingVertical: 8,
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    marginBottom: 84,
+    backgroundColor: "#FBFDFE",
+    elevation: 3,
+    shadowColor: "#BBBBBB",
+    overflow: "hidden",
+    marginHorizontal: 16,
+  },
+  notaCard: {
+    width: Dimensions.get("window").width - 32,
+    borderColor: "#EEEEEE",
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingVertical: 10,
     paddingHorizontal: 16,
     marginBottom: 22,
     backgroundColor: "#FBFDFE",
@@ -21,6 +35,7 @@ const globalStyle = StyleSheet.create({
     shadowColor: "#BBBBBB",
     overflow: "hidden",
     marginHorizontal: 16,
+    maxHeight: 180,
   },
   tituloNotaCard: {
     fontWeight: "600",

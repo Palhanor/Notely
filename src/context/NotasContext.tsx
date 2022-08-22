@@ -10,15 +10,32 @@ const initialValues: INotasContext = {
   apagarNota: () => {},
 };
 
+const textoDeApresentacao = `
+## 📄 **Bem vindo ao Notely**
+
+Com o **Notely** você será capaz de avançar para o próximo nível! 🥳🎉🎊
+`;
+
+const notaInicial = {
+  id: 0,
+  titulo: "Introdução ao Notely",
+  texto: textoDeApresentacao,
+};
+
 export const NotasContext = createContext<INotasContext>(initialValues);
 
 export function NotasContextProvider({ children }: { children: any }) {
-  const [notas, setNotas] = useState<INota[]>([]);
+  const [notas, setNotas] = useState<INota[]>([notaInicial]);
 
   // Adiciona uma nova nota na lista de notas (Create)
   const adicionaNota = (nota: INota) => {
+    const idNota = IdGenerator();
     const novasNotas = [
-      { id: IdGenerator(), titulo: nota.titulo, texto: nota.texto },
+      {
+        id: idNota,
+        titulo: nota.titulo ? nota.titulo : `Nota ${idNota}`,
+        texto: nota.texto,
+      },
       ...notas,
     ];
     setNotas(novasNotas);
@@ -28,10 +45,13 @@ export function NotasContextProvider({ children }: { children: any }) {
   const atualizaNota = (nota: INota) => {
     const novasNotas = notas.map((notaAntiga) => {
       if (notaAntiga.id === nota.id) {
-        return { ...notaAntiga, titulo: nota.titulo, texto: nota.texto };
-      } else {
-        return { ...notaAntiga };
+        return {
+          ...notaAntiga,
+          titulo: nota.titulo ? nota.titulo : `Nota ${nota.id}`,
+          texto: nota.texto,
+        };
       }
+      return { ...notaAntiga };
     });
     setNotas(novasNotas);
   };
