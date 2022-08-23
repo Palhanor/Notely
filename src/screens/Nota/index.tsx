@@ -4,11 +4,11 @@ import INota from "../../interface/Nota";
 import { NotasContext } from "../../context/NotasContext";
 import { NavigationStackProps } from "../../interface/Screens";
 import Header from "../../components/Header";
-import styleNota from "../../styles/notaScreen";
 import { View } from "react-native";
 import SalvarNota from "./components/SalvarNota";
 import VisualizadorNota from "./components/VisualizadorNota";
 import EditorNota from "./components/EditorNota";
+import { notaStyle } from "../../styles";
 
 export default function FormModal() {
   const { adicionaNota, atualizaNota } = useContext(NotasContext);
@@ -21,14 +21,11 @@ export default function FormModal() {
   const [editando, setEditando] = useState<boolean>(notaEmBranco);
   const [titulo, setTitulo] = useState<string>(notaRecebida.titulo);
   const [texto, setTexto] = useState<string>(notaRecebida.texto);
+  const [id, setId] = useState<number | boolean>(notaRecebida.id)
 
   const adicionarNota = () => {
     if (notaEmBranco && texto) {
-      const novaNota: INota = {
-        id: false,
-        titulo: titulo,
-        texto: texto,
-      };
+      const novaNota: INota = {id, titulo, texto};
       adicionaNota(novaNota);
       navigation.navigate("Home");
     } else if (!notaEmBranco && texto) {
@@ -45,7 +42,7 @@ export default function FormModal() {
   };
 
   return (
-    <View style={styleNota.containerModal}>
+    <View style={notaStyle.containerModal}>
       <Header>Nota</Header>
       {editando ? (
         <EditorNota
@@ -57,8 +54,7 @@ export default function FormModal() {
         />
       ) : (
         <VisualizadorNota
-          titulo={titulo}
-          texto={texto}
+          nota={{id, titulo, texto}}
           setEditando={setEditando}
         />
       )}

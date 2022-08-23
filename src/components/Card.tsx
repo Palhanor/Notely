@@ -1,20 +1,22 @@
 import React, { useContext } from "react";
 import Markdown from "react-native-markdown-display";
-import INota from "../../../interface/Nota";
-import globalStyle from "../../../styles/cardStyle";
-import { NotasContext } from "../../../context/NotasContext";
+import { NotasContext } from "../context/NotasContext";
 import { useNavigation } from "@react-navigation/native";
-import { NavigationStackProps } from "../../../interface/Screens";
+import { NavigationStackProps } from "../interface/Screens";
 import { Text, View, TouchableOpacity, Alert } from "react-native";
-import { IconeLixo } from "../../../components/Icones";
-import { COLORS } from "../../../utils/Colors";
+import { IconeLixo } from "./Icones";
+import { COLORS } from "../styles/Colors";
+import { CardProp } from "../interface/Props";
+import { cardStyle } from "../styles";
 
-export default function Card({ card }: { card: INota }) {
+export default function Card({ card, tipo }: CardProp) {
   const { apagarNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
 
   function abrirNota() {
-    navigation.navigate("Nota", { nota: card });
+    if (tipo === "lista") {
+      navigation.navigate("Nota", { nota: card });
+    }
   }
 
   function deletar() {
@@ -30,16 +32,24 @@ export default function Card({ card }: { card: INota }) {
 
   return (
     <View>
-      <View style={globalStyle.campoTitulo}>
-        <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
-        <TouchableOpacity style={globalStyle.apagarIcon} onPress={deletar}>
-          <Text>
+      <View style={cardStyle.campoTitulo}>
+        <Text
+          style={
+            tipo === "lista"
+              ? cardStyle.tituloNotaCard
+              : cardStyle.tituloNotaVisualizacao
+          }
+        >
+          {card.titulo}
+        </Text>
+        {tipo === "lista" && (
+          <TouchableOpacity style={cardStyle.apagarIcon} onPress={deletar}>
             <IconeLixo size={20} color={COLORS.black} />
-          </Text>
-        </TouchableOpacity>
+          </TouchableOpacity>
+        )}
       </View>
       <TouchableOpacity
-        style={globalStyle.notaCard}
+        style={tipo === "lista" ? cardStyle.notaCard : cardStyle.notaAberta}
         onPress={abrirNota}
         onLongPress={() => console.log("Pressionou por mais tempo")}
       >

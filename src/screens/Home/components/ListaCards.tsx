@@ -1,8 +1,8 @@
 import React from "react";
-import styleHome from "../../../styles/homeScreen";
-import Card from "./Card";
+import Card from "../../../components/Card";
 import { FlatList } from "react-native";
 import { ListaCardsProp } from "../../../interface/Props";
+import { listaCardsStyle } from "../../../styles";
 
 export default function ListaCards({ notas }: ListaCardsProp) {
   return (
@@ -10,8 +10,8 @@ export default function ListaCards({ notas }: ListaCardsProp) {
       {notas.length > 0 && (
         <FlatList
           data={[...notas]}
-          style={styleHome.lista}
-          renderItem={({ item }) => <Card card={item} />}
+          style={listaCardsStyle.lista}
+          renderItem={({ item }) => <Card card={item} tipo="lista" />}
           keyExtractor={({ id }) => `${id}`}
         />
       )}

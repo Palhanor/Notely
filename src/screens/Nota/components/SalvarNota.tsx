@@ -1,12 +1,12 @@
 import React from "react";
-import styleNota from "../../../styles/notaScreen";
 import { Text, TouchableOpacity } from "react-native";
 import { SalvarNotaProp } from "../../../interface/Props";
+import { salvarNotaStyle } from "../../../styles";
 
 export default function SalvarNota({ adicionarNota }: SalvarNotaProp) {
   return (
-    <TouchableOpacity style={styleNota.botaoSalvar} onPress={adicionarNota}>
-      <Text style={styleNota.textoBotaoSalvar}>Salvar</Text>
+    <TouchableOpacity style={salvarNotaStyle.botaoSalvar} onPress={adicionarNota}>
+      <Text style={salvarNotaStyle.textoBotaoSalvar}>Salvar</Text>
     </TouchableOpacity>
   );
 }

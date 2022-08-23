@@ -1,6 +1,7 @@
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
-import { COLORS } from "../utils/Colors";
+import { COLORS } from "../styles/Colors";
+import { IconeProp } from "../interface/Props";
 
 export const IconeRetornar = () => (
   <MaterialCommunityIcons name="chevron-left" size={30} color="#FFF" />
@@ -18,12 +19,8 @@ export const IconeEditar = () => (
   <MaterialCommunityIcons name="pencil-outline" size={30} color="#FFF" />
 );
 
-export const IconeLixo = ({ size, color }: { size: number; color: string }) => (
-  <MaterialCommunityIcons
-    name="trash-can-outline"
-    size={size}
-    color={color}
-  />
+export const IconeLixo = ({ size, color }: IconeProp) => (
+  <MaterialCommunityIcons name="trash-can-outline" size={size} color={color} />
 );
 
 export const IconeGrid = () => (

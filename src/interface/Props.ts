@@ -4,6 +4,11 @@ export interface HeaderProp {
   children: string
 }
 
+export interface CardProp {
+  card: INota;
+  tipo: "lista" | "visualizacao";
+}
+
 export interface EditorNotaProp {
   titulo: string;
   texto: string;
@@ -13,8 +18,7 @@ export interface EditorNotaProp {
 }
 
 export interface VisualizadorNotaProp {
-  titulo: string;
-  texto: string;
+  nota: INota;
   setEditando: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
@@ -22,6 +26,16 @@ export interface SalvarNotaProp {
   adicionarNota: () => void;
 }
 
-export interface ListaCardsProp { 
-  notas: INota[] 
+export interface ListaCardsProp {
+  notas: INota[]
+}
+
+export interface BotaoPrincipalProp {
+  icone: () => JSX.Element;
+  onPress: () => void;
+}
+
+export interface IconeProp {
+  size: number;
+  color: string
 }

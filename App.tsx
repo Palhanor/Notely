@@ -1,12 +1,8 @@
-/* PADRONIZAÇÃO
-  1. Padronizar estilos comuns (menu da Home e botão de salvar nota)
-  2. Fazer mais componentização (Botão redondo flutuante, card da Home e da visualização de Nota)
-*/
-
 /* FEATURES DE CURTO PRAZO
-  1. Sistema de busca
-  2. Sistema de ordenamento
-  3. Ferramentas de personalização das notas
+  1. Usar fonte personalizada
+  2. Sistema de busca
+  3. Sistema de ordenamento
+  4. Ferramentas de personalização das notas
     * Link
     * Imagem
     * Linha
@@ -14,23 +10,23 @@
     * Italico
     * Riscado
     * Tabela...
-  4. Campo de notas favoritadas (No topo)
-  5. Menu de opções dos cards
+  5. Campo de notas favoritadas (No topo)
+  6. Menu de opções dos cards
     * Excluir
     * Favoritar/desfavoritar
     * Tags/cadernos
     * Selecionar
-  6. Sistema de favritar ou desfavoritar notas (Menu dos cards)
-  7. Campo de tags/cadernos (Cria, filtrar)
-  8. Sistema de atribuição de tags/cadernos
-  9. Criar lixeira para notas apagadas
-  10. Menu de ferramentas das notas
+  7. Sistema de favritar ou desfavoritar notas (Menu dos cards)
+  8. Campo de tags/cadernos (Cria, filtrar)
+  9. Sistema de atribuição de tags/cadernos
+  10. Criar lixeira para notas apagadas
+  11. Menu de ferramentas das notas
     * Editar
     * Visualizar
     * Salvar
     * Ferrametnas (Personalização)
-  11. Visualização em blocos (?)
-  12. Armazenamento local com SQLite
+  12. Visualização em blocos (?)
+  13. Armazenamento local com SQLite
 */
 
 /* FEATURES DE LONGO PRAZO
@@ -38,21 +34,20 @@
  * Adicionar sistema de expansão e retração das notas na Home (onLongPress?)
  * Adicionar seleção multipla de itens (onLongPress?)
  * Adicionar personalização para texto selecionado (Aplicar personalização ao texto existente)
- * Adicionar uma tipografia personalizada para o app (Header, notas)
  * Adicionar manipulação drag and drop (Ordenamento personalizado das notas)
  * Adicionar a exibição do markdown de forma simultânea (Como nas anotações do TickTick)
  * Adicionar suporte a check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown)
  * Adicionar o check de itens do check-list no markdown (Não sei se é possível)
  * Adicionar personalização de estilo das notas (Não sei se é possível)
- * Tamanho da fonte
- * Familia da fonte
- * Cor de fundo
- * Cor da fonte
- * Cor do background
+  * Tamanho da fonte
+  * Familia da fonte
+  * Cor de fundo
+  * Cor da fonte
+  * Cor do background
  * Adicionar suporte multimidia (Não sei se é possível)
- * Audio
- * Imagem
- * Vídeo
+  * Audio
+  * Imagem
+  * Vídeo
  * Dar opção de nota de áudio na forma transcrita (Não sei se é possível)
  */
 
@@ -71,7 +66,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NotasContextProvider } from "./src/context/NotasContext";
 import { RootStackProps } from "./src/interface/Screens";
-import { COLORS } from "./src/utils/Colors";
+import { COLORS } from "./src/styles/Colors";
 
 const Stack = createNativeStackNavigator<RootStackProps>();
 

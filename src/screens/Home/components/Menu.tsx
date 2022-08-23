@@ -1,6 +1,6 @@
 import React from "react";
-import { View, StyleSheet, TouchableWithoutFeedback } from "react-native";
-import { COLORS } from "../../../utils/Colors";
+import { View, TouchableWithoutFeedback } from "react-native";
+import { COLORS } from "../../../styles/Colors";
 import {
   IconeBusca,
   IconeGrid,
@@ -8,9 +8,9 @@ import {
   IconeOrdenador,
   IconeTag,
 } from "../../../components/Icones";
+import { menuStyle } from "../../../styles";
 
 export default function Menu() {
-
   //   const manipulaLixo = () => {};
   //   const manipulaVisualizacao = () => {};
   //   const manipulaOrdenamento = () => {};
@@ -18,7 +18,7 @@ export default function Menu() {
   //   const manipulaBusca = () => {};
 
   return (
-    <View style={styles.menu}>
+    <View style={menuStyle.menu}>
       <TouchableWithoutFeedback>
         <IconeLixo size={30} color={COLORS.blueGray} />
       </TouchableWithoutFeedback>
@@ -37,23 +37,3 @@ export default function Menu() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  menu: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    // justifyContent: "space-around",
-    alignContent: "stretch",
-    backgroundColor: COLORS.background,
-    // backgroundColor: "red",
-    height: 60,
-    paddingTop: 15,
-    marginTop: 10,
-    width: "100%",
-    paddingHorizontal: 32,
-    position: "absolute",
-    bottom: 0,
-    left: 0,
-    zIndex: 1,
-  },
-});
