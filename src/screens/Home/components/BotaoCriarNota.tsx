@@ -3,12 +3,11 @@ import styleHome from "../../../styles/homeScreen";
 import { useNavigation } from "@react-navigation/native";
 import { Text, TouchableOpacity } from "react-native";
 import { NavigationStackProps } from "../../../interface/Screens";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
+import { IconeAdicionar } from "../../../components/Icones";
 
 export default function BotaoCriarNota() {
   const navigation = useNavigation<NavigationStackProps>();
 
-  const adicionarIcon = <Icon name="plus" size={30} color="#FFF" />;
 
   return (
     <TouchableOpacity
@@ -19,7 +18,7 @@ export default function BotaoCriarNota() {
         })
       }
     >
-      <Text style={styleHome.centralizar}>{adicionarIcon}</Text>
+      <Text style={styleHome.centralizar}><IconeAdicionar /></Text>
     </TouchableOpacity>
   );
 }

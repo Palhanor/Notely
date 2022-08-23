@@ -2,13 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackProps } from "../interface/Screens";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { HeaderProp } from "../interface/Props";
+import { COLORS } from "../utils/Colors";
+import { IconeRetornar } from "./Icones";
 
 export default function Header({ children }: HeaderProp) {
   const navigation = useNavigation<NavigationStackProps>();
-
-  const retrnarIcon = <Icon name="chevron-left" size={30} color="#FFF" />;
 
   return (
     <View style={styles.background}>
@@ -17,7 +16,9 @@ export default function Header({ children }: HeaderProp) {
           style={styles.botaoRetornar}
           onPress={() => navigation.goBack()}
         >
-          <Text>{retrnarIcon}</Text>
+          <Text>
+            <IconeRetornar />
+          </Text>
         </TouchableOpacity>
       )}
       <Text style={styles.texto}>{children}</Text>
@@ -27,7 +28,7 @@ export default function Header({ children }: HeaderProp) {
 
 const styles = StyleSheet.create({
   background: {
-    backgroundColor: "#0E677A",
+    backgroundColor: COLORS.theme,
     width: "100%",
     height: 60,
     paddingHorizontal: 20,
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   texto: {
-    color: "#FFFFFF",
+    color: COLORS.white,
     fontSize: 20,
     fontWeight: "bold",
   },

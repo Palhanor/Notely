@@ -5,6 +5,7 @@ import styleHome from "../../styles/homeScreen";
 import BotaoCriarNota from "./components/BotaoCriarNota";
 import ListaCards from "./components/ListaCards";
 import { View, StatusBar } from "react-native";
+import Menu from "./components/Menu";
 
 export default function Home() {
   const { notas } = useContext(NotasContext);
@@ -12,9 +13,10 @@ export default function Home() {
   return (
     <View style={styleHome.container}>
       <StatusBar />
-      <Header>Notely</Header>
-      <ListaCards notas={notas}></ListaCards>
-      <BotaoCriarNota></BotaoCriarNota>
+      <Header>Notely</Header> 
+      <ListaCards notas={notas} />
+      <BotaoCriarNota />
+      <Menu />
     </View>
   );
 }

@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
+import { COLORS } from "../utils/Colors";
 
 const globalStyle = StyleSheet.create({
   campoTitulo: {
@@ -10,29 +11,29 @@ const globalStyle = StyleSheet.create({
   },
   notaAberta: {
     width: Dimensions.get("window").width - 32,
-    borderColor: "#EEEEEE",
+    borderColor: COLORS.cardBorder,
     borderWidth: 1,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 16,
     marginBottom: 84,
-    backgroundColor: "#FBFDFE",
+    backgroundColor: COLORS.cardBackground,
     elevation: 3,
-    shadowColor: "#BBBBBB",
+    shadowColor: COLORS.cardShadow,
     overflow: "hidden",
     marginHorizontal: 16,
   },
   notaCard: {
     width: Dimensions.get("window").width - 32,
-    borderColor: "#EEEEEE",
+    borderColor: COLORS.cardBorder,
     borderWidth: 1,
     borderRadius: 10,
     paddingVertical: 10,
     paddingHorizontal: 16,
     marginBottom: 22,
-    backgroundColor: "#FBFDFE",
+    backgroundColor: COLORS.cardBackground,
     elevation: 3,
-    shadowColor: "#BBBBBB",
+    shadowColor: COLORS.cardShadow,
     overflow: "hidden",
     marginHorizontal: 16,
     maxHeight: 180,

@@ -1,22 +1,20 @@
 import React, { useContext } from "react";
 import Markdown from "react-native-markdown-display";
 import INota from "../../../interface/Nota";
-import globalStyle from "../../../styles/globalStyle";
+import globalStyle from "../../../styles/cardStyle";
 import { NotasContext } from "../../../context/NotasContext";
 import { useNavigation } from "@react-navigation/native";
 import { NavigationStackProps } from "../../../interface/Screens";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { Text, View, TouchableOpacity, Alert } from "react-native";
+import { IconeLixo } from "../../../components/Icones";
+import { COLORS } from "../../../utils/Colors";
 
 export default function Card({ card }: { card: INota }) {
   const { apagarNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
 
-  const apagarIcon = <Icon name="trash-can-outline" size={20} color="#000" />;
-
   function abrirNota() {
     navigation.navigate("Nota", { nota: card });
-    // console.log(card.texto)
   }
 
   function deletar() {
@@ -35,7 +33,9 @@ export default function Card({ card }: { card: INota }) {
       <View style={globalStyle.campoTitulo}>
         <Text style={globalStyle.tituloNotaCard}>{card.titulo}</Text>
         <TouchableOpacity style={globalStyle.apagarIcon} onPress={deletar}>
-          <Text>{apagarIcon}</Text>
+          <Text>
+            <IconeLixo size={20} color={COLORS.black} />
+          </Text>
         </TouchableOpacity>
       </View>
       <TouchableOpacity

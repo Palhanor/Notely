@@ -1,8 +1,8 @@
 import React from "react";
 import styleNota from "../../../styles/notaScreen";
 import { Text, TextInput, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import { EditorNotaProp } from "../../../interface/Props";
+import { IconeVisualizar } from "../../../components/Icones";
 
 export default function EditorNota({
   titulo,
@@ -11,8 +11,6 @@ export default function EditorNota({
   setTexto,
   setEditando,
 }: EditorNotaProp) {
-  const visualizeIcon = <Icon name="note-outline" size={30} color="#FFF" />;
-
   return (
     <>
       <TextInput
@@ -33,7 +31,9 @@ export default function EditorNota({
         style={styleNota.botaoEditarVisualizar}
         onPress={() => setEditando(false)}
       >
-        <Text style={styleNota.centralizar}>{visualizeIcon}</Text>
+        <Text style={styleNota.centralizar}>
+          <IconeVisualizar />
+        </Text>
       </TouchableOpacity>
     </>
   );

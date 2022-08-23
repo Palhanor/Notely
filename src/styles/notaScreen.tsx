@@ -1,9 +1,10 @@
 import { StyleSheet, Dimensions } from "react-native";
+import { COLORS } from "../utils/Colors";
 
 const styleNota = StyleSheet.create({
   containerModal: {
     flex: 1,
-    backgroundColor: "#F5F7F8",
+    backgroundColor: COLORS.background,
   },
   input: {
     width: Dimensions.get("window").width - 32,
@@ -22,7 +23,7 @@ const styleNota = StyleSheet.create({
     marginHorizontal: 16,
   },
   botaoEditarVisualizar: {
-    backgroundColor: "#0E677A",
+    backgroundColor: COLORS.theme,
     width: 60,
     height: 60,
     borderRadius: 60,
@@ -33,7 +34,7 @@ const styleNota = StyleSheet.create({
     zIndex: 1,
   },
   botaoSalvar: {
-    backgroundColor: "#0E677A",
+    backgroundColor: COLORS.theme,
     width: "100%",
     padding: 18,
     position: "absolute",
@@ -43,7 +44,7 @@ const styleNota = StyleSheet.create({
   },
   textoBotaoSalvar: {
     textAlign: "center",
-    color: "#FFFFFF",
+    color: COLORS.white,
   },
   centralizar: {
     textAlign: "center",
