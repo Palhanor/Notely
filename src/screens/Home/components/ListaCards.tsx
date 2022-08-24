@@ -1,20 +1,23 @@
+// Um FlatList atrapalharia a implementação de filtros e favoritos
 import React from "react";
 import Card from "../../../components/Card";
-import { FlatList } from "react-native";
+import { ScrollView } from "react-native";
 import { ListaCardsProp } from "../../../interface/Props";
 import { listaCardsStyle } from "../../../styles";
 
-export default function ListaCards({ notas }: ListaCardsProp) {
+export default function ListaCards({ notas, valorBuscado }: ListaCardsProp) {
+  const notasFiltradas = notas.filter(
+    (nota) =>
+      (valorBuscado !== "" &&
+        nota.titulo.toLowerCase().indexOf(valorBuscado.toLowerCase()) !== -1) ||
+      nota.texto.toLowerCase().indexOf(valorBuscado.toLowerCase()) !== -1
+  );
+
   return (
-    <>
-      {notas.length > 0 && (
-        <FlatList
-          data={[...notas]}
-          style={listaCardsStyle.lista}
-          renderItem={({ item }) => <Card card={item} tipo="lista" />}
-          keyExtractor={({ id }) => `${id}`}
-        />
-      )}
-    </>
+    <ScrollView style={listaCardsStyle.lista}>
+      {notasFiltradas.map((nota) => (
+        <Card card={nota} tipo="lista" key={nota.id as number} />
+      ))}
+    </ScrollView>
   );
 }

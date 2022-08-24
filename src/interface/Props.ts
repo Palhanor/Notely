@@ -1,7 +1,7 @@
 import INota from "./Nota";
 
 export interface HeaderProp {
-  children: string
+  children: string;
 }
 
 export interface CardProp {
@@ -27,15 +27,26 @@ export interface SalvarNotaProp {
 }
 
 export interface ListaCardsProp {
-  notas: INota[]
+  notas: INota[];
+  valorBuscado: string;
 }
 
 export interface BotaoPrincipalProp {
-  icone: () => JSX.Element;
+  icone: JSX.Element;
   onPress: () => void;
 }
 
 export interface IconeProp {
   size: number;
-  color: string
+  color: string;
+}
+
+export interface MenuProp {
+  setBuscando: React.Dispatch<React.SetStateAction<boolean>>;
+  setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface BuscadorProp {
+  valorBuscado: string;
+  setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
 }

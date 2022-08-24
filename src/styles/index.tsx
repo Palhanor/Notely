@@ -4,13 +4,13 @@ import { COLORS } from "./Colors";
 export const botaoPrincipalStyle = StyleSheet.create({
   botaoPrincipal: {
     backgroundColor: COLORS.theme,
-    width: 60,
-    height: 60,
     borderRadius: 60,
+    bottom: 80,
+    height: 60,
     padding: 12,
     position: "absolute",
-    bottom: 80,
     right: 16,
+    width: 60,
     zIndex: 1,
   },
   posicaoIcone: {
@@ -27,57 +27,55 @@ export const cardStyle = StyleSheet.create({
     marginRight: 16,
   },
   notaAberta: {
-    width: Dimensions.get("window").width - 32,
+    backgroundColor: COLORS.cardBackground,
     borderColor: COLORS.cardBorder,
-    borderWidth: 1,
     borderRadius: 10,
+    borderWidth: 1,
+    marginBottom: 84,
+    marginHorizontal: 16,
+    overflow: "hidden",
     paddingVertical: 10,
     paddingHorizontal: 16,
-    marginBottom: 84,
-    backgroundColor: COLORS.cardBackground,
-    elevation: 3,
     shadowColor: COLORS.cardShadow,
-    overflow: "hidden",
-    marginHorizontal: 16,
+    width: Dimensions.get("window").width - 32,
   },
   notaCard: {
-    width: Dimensions.get("window").width - 32,
+    backgroundColor: COLORS.white,
     borderColor: COLORS.cardBorder,
     borderWidth: 1,
     borderRadius: 10,
-    paddingVertical: 10,
-    paddingHorizontal: 16,
     marginBottom: 22,
-    backgroundColor: COLORS.cardBackground,
-    elevation: 3,
-    shadowColor: COLORS.cardShadow,
-    overflow: "hidden",
     marginHorizontal: 16,
     maxHeight: 180,
+    overflow: "hidden",
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    shadowColor: COLORS.cardShadow,
+    width: Dimensions.get("window").width - 32,
   },
   tituloNotaCard: {
-    fontWeight: "600",
     fontSize: 16,
+    fontWeight: "600",
     marginBottom: 10,
     marginHorizontal: 24,
   },
   tituloNotaVisualizacao: {
-    fontWeight: "600",
-    fontSize: 20,
     marginBottom: 10,
     marginHorizontal: 24,
     marginTop: 16,
+    fontSize: 20,
+    fontWeight: "600",
   },
 });
 
 export const headerStyle = StyleSheet.create({
   background: {
+    alignItems: "center",
     backgroundColor: COLORS.theme,
-    width: "100%",
+    flexDirection: "row",
     height: 60,
     paddingHorizontal: 20,
-    flexDirection: "row",
-    alignItems: "center",
+    width: "100%",
   },
   botaoRetornar: {
     marginLeft: -10,
@@ -85,85 +83,87 @@ export const headerStyle = StyleSheet.create({
   },
   texto: {
     color: COLORS.white,
-    fontSize: 20,
-    fontWeight: "bold",
+    letterSpacing: 0.9,
+    fontSize: 22,
+    fontWeight: "600",
+    fontFamily: "notoserif",
   },
 });
 
 export const listaCardsStyle = StyleSheet.create({
   lista: {
-    width: "100%",
-    paddingTop: 16,
     marginBottom: 60,
+    paddingTop: 16,
+    width: "100%",
   },
 });
 
 export const menuStyle = StyleSheet.create({
   menu: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    // justifyContent: "space-around",
     alignContent: "stretch",
     backgroundColor: COLORS.background,
     // backgroundColor: "red",
+    bottom: 0,
+    flexDirection: "row",
     height: 60,
-    paddingTop: 15,
+    justifyContent: "space-between",
+    // justifyContent: "space-around",
+    left: 0,
     marginTop: 10,
-    width: "100%",
+    paddingTop: 15,
     paddingHorizontal: 32,
     position: "absolute",
-    bottom: 0,
-    left: 0,
+    width: "100%",
     zIndex: 1,
   },
 });
 
 export const homeStyle = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: COLORS.background,
     alignItems: "center",
+    backgroundColor: COLORS.background,
+    flex: 1,
   },
 });
 
 export const editorNotaStyle = StyleSheet.create({
   input: {
-    width: Dimensions.get("window").width - 32,
-    height: 42,
-    padding: 8,
     fontSize: 20,
+    height: 42,
     marginHorizontal: 16,
     marginTop: 16,
+    padding: 8,
+    width: Dimensions.get("window").width - 32,
   },
   multiline: {
-    width: Dimensions.get("window").width - 32,
     height: "60%",
     marginVertical: 8,
+    marginHorizontal: 16,
     padding: 8,
     textAlignVertical: "top",
-    marginHorizontal: 16,
+    width: Dimensions.get("window").width - 32,
   },
 });
 
 export const salvarNotaStyle = StyleSheet.create({
   botaoSalvar: {
     backgroundColor: COLORS.theme,
-    width: "100%",
-    padding: 18,
-    position: "absolute",
     bottom: 0,
     left: 0,
+    padding: 18,
+    position: "absolute",
+    width: "100%",
     zIndex: 1,
   },
   textoBotaoSalvar: {
-    textAlign: "center",
     color: COLORS.white,
+    textAlign: "center",
   },
 });
 
 export const notaStyle = StyleSheet.create({
   containerModal: {
-    flex: 1,
     backgroundColor: COLORS.background,
+    flex: 1,
   },
 });

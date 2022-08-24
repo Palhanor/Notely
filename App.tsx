@@ -1,32 +1,28 @@
 /* FEATURES DE CURTO PRAZO
-  1. Usar fonte personalizada
-  2. Sistema de busca
-  3. Sistema de ordenamento
-  4. Ferramentas de personalização das notas
-    * Link
-    * Imagem
-    * Linha
-    * Negrito
-    * Italico
-    * Riscado
-    * Tabela...
-  5. Campo de notas favoritadas (No topo)
-  6. Menu de opções dos cards
+  1. Sistema de ordenamento (Data de criação, data de modificação, alfabética do título)
+  2. Menu de opções dos cards
     * Excluir
     * Favoritar/desfavoritar
     * Tags/cadernos
     * Selecionar
-  7. Sistema de favritar ou desfavoritar notas (Menu dos cards)
-  8. Campo de tags/cadernos (Cria, filtrar)
-  9. Sistema de atribuição de tags/cadernos
-  10. Criar lixeira para notas apagadas
-  11. Menu de ferramentas das notas
-    * Editar
-    * Visualizar
-    * Salvar
-    * Ferrametnas (Personalização)
-  12. Visualização em blocos (?)
-  13. Armazenamento local com SQLite
+    * Copiar
+  3. Campo de notas favoritadas (No topo)
+  4. Sistema de favritar ou desfavoritar notas (Menu dos cards)
+  5. Criar lixeira para notas apagadas
+  6. Ferramentas de personalização das notas
+    * Adidionar link
+    * Adicionar imagem
+    * Adicionar linha
+    * Adicionar negrito
+    * Adicionar italico
+    * Adicionar riscado
+    * Adicionar tabela...
+  7. Campo de tags/cadernos (Cria, filtrar)
+  8. Sistema de atribuição de tags/cadernos
+  9. Visualização em blocos (?)
+  10. Armazenamento local com SQLite
+  11. Sistema de copiar conteudo da nota
+  12. Criar notas criptografadas
 */
 
 /* FEATURES DE LONGO PRAZO
@@ -48,6 +44,7 @@
   * Audio
   * Imagem
   * Vídeo
+  * Desenho
  * Dar opção de nota de áudio na forma transcrita (Não sei se é possível)
  */
 

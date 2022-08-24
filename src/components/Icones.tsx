@@ -54,3 +54,7 @@ export const IconeOrdenador = () => (
 export const IconeBusca = () => (
   <FontAwesomeIcons name="search" size={30} color={COLORS.blueGray} />
 );
+
+export const IconeFavorito = () => (
+  <FontAwesomeIcons name="star" size={30} color={COLORS.blueGray} />
+);

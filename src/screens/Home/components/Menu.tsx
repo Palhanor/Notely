@@ -1,6 +1,8 @@
 import React from "react";
 import { View, TouchableWithoutFeedback } from "react-native";
 import { COLORS } from "../../../styles/Colors";
+import { menuStyle } from "../../../styles";
+import { MenuProp } from "../../../interface/Props";
 import {
   IconeBusca,
   IconeGrid,
@@ -8,31 +10,47 @@ import {
   IconeOrdenador,
   IconeTag,
 } from "../../../components/Icones";
-import { menuStyle } from "../../../styles";
 
-export default function Menu() {
+export default function Menu({ setBuscando, setValorBuscado }: MenuProp) {
   //   const manipulaLixo = () => {};
   //   const manipulaVisualizacao = () => {};
   //   const manipulaOrdenamento = () => {};
   //   const manipulaTags = () => {};
-  //   const manipulaBusca = () => {};
+
+  const manipulaBusca = () => {
+    setBuscando((buscador) => {
+      const buscadorInvertido = !buscador;
+      if (!buscadorInvertido) setValorBuscado("");
+      return buscadorInvertido;
+    });
+  };
 
   return (
     <View style={menuStyle.menu}>
       <TouchableWithoutFeedback>
-        <IconeLixo size={30} color={COLORS.blueGray} />
+        <View>
+          <IconeLixo size={30} color={COLORS.blueGray} />
+        </View>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback>
-        <IconeGrid />
+        <View>
+          <IconeTag />
+        </View>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback>
-        <IconeOrdenador />
+        <View>
+          <IconeGrid />
+        </View>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback>
-        <IconeTag />
+        <View>
+          <IconeOrdenador />
+        </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
-        <IconeBusca />
+      <TouchableWithoutFeedback onPress={() => manipulaBusca()}>
+        <View>
+          <IconeBusca />
+        </View>
       </TouchableWithoutFeedback>
     </View>
   );
