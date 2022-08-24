@@ -43,6 +43,7 @@ export interface IconeProp {
 
 export interface MenuProp {
   setBuscando: React.Dispatch<React.SetStateAction<boolean>>;
+  setOrdenando: React.Dispatch<React.SetStateAction<boolean>>;
   setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
 }
 

@@ -1,15 +1,21 @@
 /* FEATURES DE CURTO PRAZO
-  1. Sistema de ordenamento (Data de criação, data de modificação, alfabética do título)
-  2. Menu de opções dos cards
+  1. Sistema de ordenamento
+    1.1. Pegar o valor selecionado com o toque
+    1.2. Atualizar o estado de acordo com o valor selecionado
+    1.3. Modificar visualmente o item selecionado na lista
+    1.4. Pegar o valor do estado dentro do gerador de lista
+    1.5. Criar os campos de nota.criacao e nota.modificacao (alem das nota.favorita e nota.tags)
+    1.6. Aplicar o tratamento dentro do array (sort) de acordo com o estado atual
+    1.7. As notas devem ser ordenadas antes de serem filtradas (busca)
+  2. Menu de opções dos cards (Três pontinhos)
     * Excluir
     * Favoritar/desfavoritar
-    * Tags/cadernos
-    * Selecionar
     * Copiar
-  3. Campo de notas favoritadas (No topo)
-  4. Sistema de favritar ou desfavoritar notas (Menu dos cards)
-  5. Criar lixeira para notas apagadas
-  6. Ferramentas de personalização das notas
+  3. Sistema de copiar conteudo da nota
+  4. Campo de notas favoritadas (No topo)
+  5. Sistema de favritar ou desfavoritar notas
+  6. Criar lixeira para notas apagadas
+  7. Ferramentas de personalização das notas
     * Adidionar link
     * Adicionar imagem
     * Adicionar linha
@@ -21,14 +27,13 @@
   8. Sistema de atribuição de tags/cadernos
   9. Visualização em blocos (?)
   10. Armazenamento local com SQLite
-  11. Sistema de copiar conteudo da nota
   12. Criar notas criptografadas
 */
 
 /* FEATURES DE LONGO PRAZO
  * Adicionar sistema de notas rápidas (Direto da Home)
  * Adicionar sistema de expansão e retração das notas na Home (onLongPress?)
- * Adicionar seleção multipla de itens (onLongPress?)
+ * Adicionar seleção individual ou multipla de notas (onLongPress?)
  * Adicionar personalização para texto selecionado (Aplicar personalização ao texto existente)
  * Adicionar manipulação drag and drop (Ordenamento personalizado das notas)
  * Adicionar a exibição do markdown de forma simultânea (Como nas anotações do TickTick)

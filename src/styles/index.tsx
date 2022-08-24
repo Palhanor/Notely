@@ -167,3 +167,39 @@ export const notaStyle = StyleSheet.create({
     flex: 1,
   },
 });
+
+export const buscadorStyle = StyleSheet.create({
+  buscador: {
+    alignItems: "flex-start",
+    justifyContent: "center",
+    backgroundColor: COLORS.ferramentas,
+    height: 50,
+    paddingHorizontal: 16,
+    width: Dimensions.get("window").width - 32,
+    marginHorizontal: 16,
+    marginTop: 14,
+    borderRadius: 5,
+  },
+});
+
+export const ordenadorStyle = StyleSheet.create({
+  ordenador: {
+    alignItems: "flex-start",
+    justifyContent: "center",
+    backgroundColor: COLORS.ferramentas,
+    width: Dimensions.get("window").width - 32,
+    marginHorizontal: 16,
+    marginTop: 14,
+    borderRadius: 5,
+    padding: 16,
+  },
+  opcao: {
+    marginVertical: 6,
+  },
+  opcaoTexto: {
+    fontSize: 15,
+  },
+  // selecionada: {
+  //   fontWeight: "700",
+  // },
+});

@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import { View, StyleSheet, TextInput } from "react-native";
+import React from "react";
+import { View, TextInput } from "react-native";
 import { BuscadorProp } from "../../../interface/Props";
-import { COLORS } from "../../../styles/Colors";
+import { buscadorStyle } from "../../../styles";
 
 export default function Buscador({
   valorBuscado,
   setValorBuscado,
 }: BuscadorProp) {
   return (
-    <View style={styles.buscador}>
+    <View style={buscadorStyle.buscador}>
       <TextInput
         placeholder="Buscar por nota!"
         value={valorBuscado}
@@ -17,14 +17,3 @@ export default function Buscador({
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  buscador: {
-    alignItems: "flex-start",
-    justifyContent: "center",
-    backgroundColor: COLORS.blueGray,
-    height: 50,
-    paddingHorizontal: 16,
-    width: "100%",
-  },
-});

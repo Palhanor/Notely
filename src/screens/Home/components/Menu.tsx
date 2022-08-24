@@ -11,13 +11,22 @@ import {
   IconeTag,
 } from "../../../components/Icones";
 
-export default function Menu({ setBuscando, setValorBuscado }: MenuProp) {
+export default function Menu({
+  setBuscando,
+  setOrdenando,
+  setValorBuscado,
+}: MenuProp) {
   //   const manipulaLixo = () => {};
   //   const manipulaVisualizacao = () => {};
-  //   const manipulaOrdenamento = () => {};
   //   const manipulaTags = () => {};
 
+  const manipulaOrdenamento = () => {
+    setBuscando(false);
+    setOrdenando((ordenamento) => !ordenamento);
+  };
+
   const manipulaBusca = () => {
+    setOrdenando(false);
     setBuscando((buscador) => {
       const buscadorInvertido = !buscador;
       if (!buscadorInvertido) setValorBuscado("");
@@ -42,12 +51,12 @@ export default function Menu({ setBuscando, setValorBuscado }: MenuProp) {
           <IconeGrid />
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={manipulaOrdenamento}>
         <View>
           <IconeOrdenador />
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback onPress={() => manipulaBusca()}>
+      <TouchableWithoutFeedback onPress={manipulaBusca}>
         <View>
           <IconeBusca />
         </View>

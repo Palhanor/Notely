@@ -5,6 +5,8 @@ import { ScrollView } from "react-native";
 import { ListaCardsProp } from "../../../interface/Props";
 import { listaCardsStyle } from "../../../styles";
 
+// Pegar o valor vindo do Ordenador
+// A depender do valor, fazer um sort diferente das notas
 export default function ListaCards({ notas, valorBuscado }: ListaCardsProp) {
   const notasFiltradas = notas.filter(
     (nota) =>
