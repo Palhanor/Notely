@@ -57,3 +57,8 @@ export interface OrdenadorProp {
   valorOrdenador: number;
   setValorOrdenador: React.Dispatch<React.SetStateAction<number>>;
 }
+
+export interface CardMenuProp {
+  deletarNota: () => void;
+  copiarNota: () => void;
+}

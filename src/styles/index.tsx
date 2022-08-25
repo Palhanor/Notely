@@ -46,7 +46,7 @@ export const cardStyle = StyleSheet.create({
     borderRadius: 10,
     marginBottom: 22,
     marginHorizontal: 16,
-    maxHeight: 180,
+    maxHeight: 200,
     overflow: "hidden",
     paddingVertical: 10,
     paddingHorizontal: 16,
@@ -199,7 +199,34 @@ export const ordenadorStyle = StyleSheet.create({
   opcaoTexto: {
     fontSize: 15,
   },
-  // selecionada: {
-  //   fontWeight: "700",
-  // },
+});
+
+export const cardMenuStyle = StyleSheet.create({
+  apagar: {
+    marginVertical: 6,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 12,
+    borderRadius: 3,
+    backgroundColor: "#f6b6c1",
+  },
+  copiar: {
+    marginVertical: 6,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 12,
+    borderRadius: 3,
+    backgroundColor: "#b6e1f6",
+  },
+  favoritar: {
+    marginVertical: 6,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 12,
+    borderRadius: 3,
+    backgroundColor: "#f6ebb6",
+  },
 });

@@ -1,5 +1,6 @@
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
+import FeatherIcons from "react-native-vector-icons/Feather";
 import { COLORS } from "../styles/Colors";
 import { IconeProp } from "../interface/Props";
 
@@ -55,6 +56,22 @@ export const IconeBusca = () => (
   <FontAwesomeIcons name="search" size={30} color={COLORS.blueGray} />
 );
 
-export const IconeFavorito = () => (
-  <FontAwesomeIcons name="star" size={30} color={COLORS.blueGray} />
+export const IconeFavoritar = () => (
+  <FontAwesomeIcons name="star-o" size={20} color={COLORS.black} />
+);
+
+export const IconeDesfavoritar = () => (
+  <FontAwesomeIcons name="star" size={20} color={COLORS.black} />
+);
+
+export const IconeMaisOpcoes = () => (
+  <FeatherIcons name="more-vertical" size={20} color={COLORS.black} />
+);
+
+export const IconeCopiar = () => (
+  <MaterialCommunityIcons
+    name="clipboard-outline"
+    size={20}
+    color={COLORS.black}
+  />
 );

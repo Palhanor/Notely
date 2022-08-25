@@ -1,14 +1,12 @@
 /* FEATURES DE CURTO PRAZO
-  1. Menu de opções dos cards (Três pontinhos)
-    * Excluir
-    * Copiar
-    * Favoritar/desfavoritar
-  2. Sistema de copiar conteudo da nota
-  3. Modificar a estrutura das notas (nota.criacao, nota.modificacao, nota.favorita e nota.tags)
-  4. Campo de notas favoritadas (No topo)
-  5. Sistema de favritar ou desfavoritar notas
-  6. Criar lixeira para notas apagadas
-  7. Ferramentas de personalização das notas
+  1. Modificar a estrutura das notas
+    * nota.criacao
+    * nota.modificacao
+    * nota.favorita
+  2. Sistema de favritar ou desfavoritar notas
+  3. Exibição de notas favoritadas no topo
+  4. Criar lixeira para notas apagadas
+  5. Ferramentas de personalização das notas
     * Adidionar link
     * Adicionar imagem
     * Adicionar linha
@@ -16,14 +14,20 @@
     * Adicionar italico
     * Adicionar riscado
     * Adicionar tabela...
-  8. Campo de tags/cadernos (Cria, filtrar)
-  9. Sistema de atribuição de tags/cadernos
-  10. Visualização em blocos (?)
-  11. Armazenamento local com SQLite
-  12. Criar notas criptografadas
+  6. Armazenamento local com SQLite
 */
 
 /* FEATURES DE LONGO PRAZO
+ * Visualização em blocos (Condensar o número de notas visíveis)
+ ** Menu para alterar visualização
+ * Sistema de tags/cadernos (Melhorar a organização das notas)
+ ** Input para criar tag/caderno
+ ** Sistema de apagar tags/cadernos
+ ** Sistema para atribuir tags/cadernos para notas
+ ** Adicionar o campo nota.tags/cadernos
+ ** Sistema para filtrar notas por tags/cadernos
+ * Adicionar sistema de notas criptografadas (Aumentar a privacidade)
+ * Adicionar sistema de bloqueio do app com senha ou biometria (Aumentar a privacidade)
  * Adicionar sistema de notas rápidas (Direto da Home)
  * Adicionar sistema de expansão e retração das notas na Home (onLongPress?)
  * Adicionar seleção individual ou multipla de notas (onLongPress?)
@@ -33,16 +37,16 @@
  * Adicionar suporte a check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown)
  * Adicionar o check de itens do check-list no markdown (Não sei se é possível)
  * Adicionar personalização de estilo das notas (Não sei se é possível)
-  * Tamanho da fonte
-  * Familia da fonte
-  * Cor de fundo
-  * Cor da fonte
-  * Cor do background
+ ** Tamanho da fonte
+ ** Familia da fonte
+ ** Cor de fundo
+ ** Cor da fonte
+ ** Cor do background
  * Adicionar suporte multimidia (Não sei se é possível)
-  * Audio
-  * Imagem
-  * Vídeo
-  * Desenho
+ ** Audio
+ ** Imagem
+ ** Vídeo
+ ** Desenho
  * Dar opção de nota de áudio na forma transcrita (Não sei se é possível)
  */
 
