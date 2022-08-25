@@ -21,18 +21,20 @@ export default function FormModal() {
   const [editando, setEditando] = useState<boolean>(notaEmBranco);
   const [titulo, setTitulo] = useState<string>(notaRecebida.titulo);
   const [texto, setTexto] = useState<string>(notaRecebida.texto);
-  const [id, setId] = useState<number | boolean>(notaRecebida.id)
+  const [id, setId] = useState<number | boolean>(notaRecebida.id);
+  const [favorito, setFavorito] = useState<boolean>(notaRecebida.favorito);
 
   const adicionarNota = () => {
     if (notaEmBranco && texto) {
-      const novaNota: INota = {id, titulo, texto};
+      const novaNota: INota = { id, titulo, texto, favorito };
       adicionaNota(novaNota);
       navigation.navigate("Home");
     } else if (!notaEmBranco && texto) {
       const notaAtualizada: INota = {
         id: notaRecebida.id,
-        titulo: titulo,
-        texto: texto,
+        titulo,
+        texto,
+        favorito: notaRecebida.favorito,
       };
       atualizaNota(notaAtualizada);
       navigation.navigate("Home");
@@ -54,7 +56,7 @@ export default function FormModal() {
         />
       ) : (
         <VisualizadorNota
-          nota={{id, titulo, texto}}
+          nota={{ id, titulo, texto, favorito }}
           setEditando={setEditando}
         />
       )}

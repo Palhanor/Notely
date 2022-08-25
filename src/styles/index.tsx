@@ -23,8 +23,8 @@ export const cardStyle = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  apagarIcon: {
-    marginRight: 16,
+  maisOpcoes: {
+    marginRight: 12,
   },
   notaAberta: {
     backgroundColor: COLORS.cardBackground,
@@ -57,11 +57,11 @@ export const cardStyle = StyleSheet.create({
     fontSize: 16,
     fontWeight: "600",
     marginBottom: 10,
-    marginHorizontal: 24,
+    marginHorizontal: 20,
   },
   tituloNotaVisualizacao: {
     marginBottom: 10,
-    marginHorizontal: 24,
+    marginHorizontal: 20,
     marginTop: 16,
     fontSize: 20,
     fontWeight: "600",
@@ -95,6 +95,13 @@ export const listaCardsStyle = StyleSheet.create({
     marginBottom: 60,
     paddingTop: 16,
     width: "100%",
+  },
+  header: {
+    fontSize: 17,
+    color: COLORS.blueGray,
+    marginLeft: 16,
+    marginBottom: 12,
+    fontWeight: "600",
   },
 });
 
@@ -177,7 +184,7 @@ export const buscadorStyle = StyleSheet.create({
     paddingHorizontal: 16,
     width: Dimensions.get("window").width - 32,
     marginHorizontal: 16,
-    marginTop: 14,
+    marginVertical: 12,
     borderRadius: 5,
   },
 });
@@ -189,7 +196,7 @@ export const ordenadorStyle = StyleSheet.create({
     backgroundColor: COLORS.ferramentas,
     width: Dimensions.get("window").width - 32,
     marginHorizontal: 16,
-    marginTop: 14,
+    marginVertical: 12,
     borderRadius: 5,
     padding: 16,
   },

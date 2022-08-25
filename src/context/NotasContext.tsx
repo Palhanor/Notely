@@ -8,18 +8,21 @@ const initialValues: INotasContext = {
   adicionaNota: () => {},
   atualizaNota: () => {},
   apagarNota: () => {},
+  favoritosNota: () => {},
 };
 
 const textoDeApresentacao = `
 ## 📄 **Bem vindo ao Notely**
 
 Com o **Notely** você será capaz de avançar para o próximo nível! 🥳🎉🎊
-`;
+
+Mais informações: [Notely](https://www.google.com)`;
 
 const notaInicial = {
   id: 0,
   titulo: "Introdução ao Notely",
   texto: textoDeApresentacao,
+  favorito: false,
 };
 
 export const NotasContext = createContext<INotasContext>(initialValues);
@@ -35,6 +38,7 @@ export function NotasContextProvider({ children }: { children: any }) {
         id: idNota,
         titulo: nota.titulo ? nota.titulo : `Nota ${idNota}`,
         texto: nota.texto,
+        favorito: nota.favorito,
       },
       ...notas,
     ];
@@ -62,9 +66,23 @@ export function NotasContextProvider({ children }: { children: any }) {
     setNotas(novasNotas);
   };
 
+  // Favorita ou desfavorita a nota selecionada
+  const favoritosNota = (nota: INota) => {
+    const novasNotas = notas.map((notaAntiga) => {
+      if (notaAntiga.id === nota.id) {
+        return {
+          ...notaAntiga,
+          favorito: !notaAntiga.favorito,
+        };
+      }
+      return { ...notaAntiga };
+    });
+    setNotas(novasNotas);
+  };
+
   return (
     <NotasContext.Provider
-      value={{ notas, adicionaNota, atualizaNota, apagarNota }}
+      value={{ notas, adicionaNota, atualizaNota, apagarNota, favoritosNota }}
     >
       {children}
     </NotasContext.Provider>

@@ -1,12 +1,9 @@
 /* FEATURES DE CURTO PRAZO
   1. Modificar a estrutura das notas
-    * nota.criacao
-    * nota.modificacao
-    * nota.favorita
-  2. Sistema de favritar ou desfavoritar notas
-  3. Exibição de notas favoritadas no topo
-  4. Criar lixeira para notas apagadas
-  5. Ferramentas de personalização das notas
+    * nota.criacao - Ordenar por criação e mostrar a data de criação
+    * nota.modificacao - Ordenar por modificação e mostrar a data de modificação
+  2. Criar lixeira para notas apagadas
+  3. Ferramentas de personalização das notas
     * Adidionar link
     * Adicionar imagem
     * Adicionar linha
@@ -14,7 +11,14 @@
     * Adicionar italico
     * Adicionar riscado
     * Adicionar tabela...
-  6. Armazenamento local com SQLite
+  4. Armazenamento local das notas com SQLite
+*/
+
+/* PROBLEMAS DO INTERPRETADOR
+  1. Não pega multiplas quebras de linha
+  2. Não dá margem superior ou inferior na linha horizontal
+  3. Precisa de uma separação entre a linha horizontal e o texto anterior
+  4. Não reconhece o check-list
 */
 
 /* FEATURES DE LONGO PRAZO
@@ -49,13 +53,6 @@
  ** Desenho
  * Dar opção de nota de áudio na forma transcrita (Não sei se é possível)
  */
-
-/* PROBLEMAS DO INTERPRETADOR
-  1. Não pega multiplas quebras de linha
-  2. Não dá margem superior ou inferior na linha horizontal
-  3. Precisa de uma separação entre a linha horizontal e o texto anterior
-  4. Não reconhece o check-list
-*/
 
 import React from "react";
 import Home from "./src/screens/Home";

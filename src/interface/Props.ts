@@ -61,4 +61,6 @@ export interface OrdenadorProp {
 export interface CardMenuProp {
   deletarNota: () => void;
   copiarNota: () => void;
+  manipularFavoritos: () => void;
+  favorito: boolean;
 }

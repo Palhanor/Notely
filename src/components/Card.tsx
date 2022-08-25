@@ -11,7 +11,7 @@ import CardMenu from "./CardMenu";
 import * as Clipboard from "expo-clipboard";
 
 export default function Card({ card, tipo }: CardProp) {
-  const { apagarNota } = useContext(NotasContext);
+  const { apagarNota, favoritosNota } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
 
   const [maisOpcoes, setMaisOpcoes] = useState<boolean>(false);
@@ -35,9 +35,12 @@ export default function Card({ card, tipo }: CardProp) {
 
   async function copiarNota() {
     await Clipboard.setStringAsync(card.texto);
+    setMaisOpcoes(false);
   }
 
-  // function manipularFavoritos() {}
+  function manipularFavoritos() {
+    favoritosNota(card);
+  }
 
   return (
     <View>
@@ -53,7 +56,7 @@ export default function Card({ card, tipo }: CardProp) {
         </Text>
         {tipo === "lista" && (
           <TouchableOpacity
-            style={cardStyle.apagarIcon}
+            style={cardStyle.maisOpcoes}
             onPress={() => setMaisOpcoes((estado) => !estado)}
           >
             <IconeMaisOpcoes />
@@ -66,7 +69,12 @@ export default function Card({ card, tipo }: CardProp) {
         onLongPress={() => console.log("Pressionou por mais tempo")}
       >
         {maisOpcoes ? (
-          <CardMenu deletarNota={deletarNota} copiarNota={copiarNota} />
+          <CardMenu
+            deletarNota={deletarNota}
+            copiarNota={copiarNota}
+            manipularFavoritos={manipularFavoritos}
+            favorito={card.favorito}
+          />
         ) : (
           <Markdown>{card.texto}</Markdown>
         )}
