@@ -5,9 +5,33 @@ import { ScrollView } from "react-native";
 import { ListaCardsProp } from "../../../interface/Props";
 import { listaCardsStyle } from "../../../styles";
 
-// Pegar o valor vindo do Ordenador
-// A depender do valor, fazer um sort diferente das notas
-export default function ListaCards({ notas, valorBuscado }: ListaCardsProp) {
+export default function ListaCards({
+  notas,
+  valorBuscado,
+  valorOrdenador,
+}: ListaCardsProp) {
+  (function () {
+    // console.log("Reordenando as notas (modificando estado)");
+    /* Reordena quando:
+     * Atualiza a Home
+     * Cria ou edita uma nota
+     * Abre ou fecha o ordenador */
+    switch (valorOrdenador) {
+      case 0:
+        return notas.sort((a, b) => (b.id as number) - (a.id as number));
+      case 1:
+        return notas.sort((a, b) => (a.id as number) - (b.id as number));
+      // case 2: return notas; // Data de modificação (mais recente)
+      // case 3: return notas; // Data de modificação (mais antiga)
+      case 4:
+        return notas.sort((a, b) => a.titulo.localeCompare(b.titulo));
+      case 5:
+        return notas.sort((a, b) => b.titulo.localeCompare(a.titulo));
+      default:
+        return notas;
+    }
+  })();
+
   const notasFiltradas = notas.filter(
     (nota) =>
       (valorBuscado !== "" &&

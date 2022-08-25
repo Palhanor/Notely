@@ -29,6 +29,7 @@ export interface SalvarNotaProp {
 export interface ListaCardsProp {
   notas: INota[];
   valorBuscado: string;
+  valorOrdenador: number;
 }
 
 export interface BotaoPrincipalProp {
@@ -50,4 +51,9 @@ export interface MenuProp {
 export interface BuscadorProp {
   valorBuscado: string;
   setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface OrdenadorProp {
+  valorOrdenador: number;
+  setValorOrdenador: React.Dispatch<React.SetStateAction<number>>;
 }

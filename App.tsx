@@ -1,17 +1,10 @@
 /* FEATURES DE CURTO PRAZO
-  1. Sistema de ordenamento
-    1.1. Pegar o valor selecionado com o toque
-    1.2. Atualizar o estado de acordo com o valor selecionado
-    1.3. Modificar visualmente o item selecionado na lista
-    1.4. Pegar o valor do estado dentro do gerador de lista
-    1.5. Criar os campos de nota.criacao e nota.modificacao (alem das nota.favorita e nota.tags)
-    1.6. Aplicar o tratamento dentro do array (sort) de acordo com o estado atual
-    1.7. As notas devem ser ordenadas antes de serem filtradas (busca)
-  2. Menu de opções dos cards (Três pontinhos)
+  1. Menu de opções dos cards (Três pontinhos)
     * Excluir
-    * Favoritar/desfavoritar
     * Copiar
-  3. Sistema de copiar conteudo da nota
+    * Favoritar/desfavoritar
+  2. Sistema de copiar conteudo da nota
+  3. Modificar a estrutura das notas (nota.criacao, nota.modificacao, nota.favorita e nota.tags)
   4. Campo de notas favoritadas (No topo)
   5. Sistema de favritar ou desfavoritar notas
   6. Criar lixeira para notas apagadas
@@ -23,10 +16,10 @@
     * Adicionar italico
     * Adicionar riscado
     * Adicionar tabela...
-  7. Campo de tags/cadernos (Cria, filtrar)
-  8. Sistema de atribuição de tags/cadernos
-  9. Visualização em blocos (?)
-  10. Armazenamento local com SQLite
+  8. Campo de tags/cadernos (Cria, filtrar)
+  9. Sistema de atribuição de tags/cadernos
+  10. Visualização em blocos (?)
+  11. Armazenamento local com SQLite
   12. Criar notas criptografadas
 */
 

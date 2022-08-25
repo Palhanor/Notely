@@ -12,14 +12,6 @@ import { useNavigation } from "@react-navigation/native";
 import { homeStyle } from "../../styles";
 import Ordenador from "./components/Ordenador";
 
-type IOrdenador =
-  | "Criadas recentemente"
-  | "Criadas há mais tempo"
-  | "Modificadas recentemente"
-  | "Modificadas há mais tempo"
-  | "De A a Z"
-  | "De Z a A";
-
 export default function Home() {
   const { notas } = useContext(NotasContext);
   const navigation = useNavigation<NavigationStackProps>();
@@ -30,9 +22,7 @@ export default function Home() {
 
   // Valor armazenado pela ferramenta
   const [valorBuscado, setValorBuscado] = useState<string>("");
-  const [valorOrdenador, setValorOrdenador] = useState<IOrdenador>(
-    "Criadas recentemente"
-  );
+  const [valorOrdenador, setValorOrdenador] = useState<number>(0);
 
   const abrirNovaNota = () => {
     navigation.navigate("Nota", {
@@ -52,11 +42,15 @@ export default function Home() {
       )}
       {ordenando && (
         <Ordenador
-          // valorOrdenador={valorOrdenador}
-          // setValorOrdenador={setValorOrdenador}
+          valorOrdenador={valorOrdenador}
+          setValorOrdenador={setValorOrdenador}
         />
       )}
-      <ListaCards notas={notas} valorBuscado={valorBuscado} />
+      <ListaCards
+        notas={notas}
+        valorBuscado={valorBuscado}
+        valorOrdenador={valorOrdenador}
+      />
       <BotaoPrincipal icone={<IconeAdicionar />} onPress={abrirNovaNota} />
       <Menu
         setBuscando={setBuscando}

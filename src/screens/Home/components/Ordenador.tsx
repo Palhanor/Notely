@@ -1,52 +1,91 @@
+// 0: Data de criação (mais recente)
+// 1: Data de criação (mais antiga)
+// 2: Data de modificação (mais recente)
+// 3: Data de modificação (mais antiga)
+// 4: Alfabética (A a Z)
+// 5: Alfabética (Z a A)
+
 import React from "react";
 import { View, Text, TouchableWithoutFeedback } from "react-native";
+import { OrdenadorProp } from "../../../interface/Props";
 import { ordenadorStyle } from "../../../styles";
 
-// Pegar o valor selecionado e atualizar o estado
-// Atualizar o valor selecionado de negrito
-export default function Ordenador() {
+export default function Ordenador({
+  valorOrdenador,
+  setValorOrdenador,
+}: OrdenadorProp) {
   return (
     <View style={ordenadorStyle.ordenador}>
-      <TouchableWithoutFeedback
-        onPress={() => console.log("Criadas recentemente")}
-      >
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(0)}>
         <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>Criadas recentemente</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback
-        onPress={() => console.log("Criadas há mais tempo")}
-      >
-        <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>Criadas há mais tempo</Text>
-        </View>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback
-        onPress={() => console.log("Modificadas recentemente")}
-      >
-        <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>
-            Modificadas recentemente
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 0 && { fontWeight: "700" },
+            ]}
+          >
+            Data de criação (mais recente)
           </Text>
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback
-        onPress={() => console.log("Modificadas há mais tempo")}
-      >
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(1)}>
         <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>
-            Modificadas há mais tempo
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 1 && { fontWeight: "700" },
+            ]}
+          >
+            Data de criação (mais antiga)
           </Text>
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback onPress={() => console.log("De A a Z")}>
+      {/* <TouchableWithoutFeedback onPress={() => setValorOrdenador(2)}>
         <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>De A a Z</Text>
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 2 && { fontWeight: "700" },
+            ]}
+          >
+            Data de modificação (mais recente)
+          </Text>
         </View>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback onPress={() => console.log("De Z a A")}>
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(3)}>
         <View style={ordenadorStyle.opcao}>
-          <Text style={ordenadorStyle.opcaoTexto}>De Z a A</Text>
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 3 && { fontWeight: "700" },
+            ]}
+          >
+            Data de modificação (mais antiga)
+          </Text>
+        </View>
+      </TouchableWithoutFeedback> */}
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(4)}>
+        <View style={ordenadorStyle.opcao}>
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 4 && { fontWeight: "700" },
+            ]}
+          >
+            Alfabética (A a Z)
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(5)}>
+        <View style={ordenadorStyle.opcao}>
+          <Text
+            style={[
+              ordenadorStyle.opcaoTexto,
+              valorOrdenador === 5 && { fontWeight: "700" },
+            ]}
+          >
+            Alfabética (Z a A)
+          </Text>
         </View>
       </TouchableWithoutFeedback>
     </View>
