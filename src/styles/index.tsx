@@ -31,7 +31,7 @@ export const cardStyle = StyleSheet.create({
     borderColor: COLORS.cardBorder,
     borderRadius: 10,
     borderWidth: 1,
-    marginBottom: 84,
+    marginBottom: 22,
     marginHorizontal: 16,
     overflow: "hidden",
     paddingVertical: 10,
@@ -216,7 +216,7 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#f6b6c1",
+    backgroundColor: "#F6B6C1",
   },
   copiar: {
     marginVertical: 6,
@@ -225,7 +225,7 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#b6e1f6",
+    backgroundColor: "#B6E1F6",
   },
   favoritar: {
     marginVertical: 6,
@@ -234,6 +234,19 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#f6ebb6",
+    backgroundColor: "#F6EBB6",
   },
+});
+
+export const visualizadorNotaStyle = StyleSheet.create({
+  blocoMetadados: {
+    marginBottom: 84,
+  },
+  metadados: {
+    color: COLORS.blueGray,
+    marginLeft: 16,
+  },
+  metadadosTitulo: {
+    fontWeight: "600",
+  }
 });

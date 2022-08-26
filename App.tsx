@@ -1,9 +1,11 @@
 /* FEATURES DE CURTO PRAZO
-  1. Modificar a estrutura das notas
-    * nota.criacao - Ordenar por criação e mostrar a data de criação
-    * nota.modificacao - Ordenar por modificação e mostrar a data de modificação
-  2. Criar lixeira para notas apagadas
-  3. Ferramentas de personalização das notas
+  1. Adicionar um sistema de notas rápidas na página inicial
+    * Fica na barra inferior e só tem campo para texto e envio
+    * Enquanto estiver em foco, o botão de adicionar nota some
+    * A nota é adicionada com o título (Nota rápida nº)
+    * Jogar as ferramentas de busca e ordenamento para o topo
+    * Inutilizar o menu periodicamente
+  2. Ferramentas de personalização das notas
     * Adidionar link
     * Adicionar imagem
     * Adicionar linha
@@ -11,7 +13,7 @@
     * Adicionar italico
     * Adicionar riscado
     * Adicionar tabela...
-  4. Armazenamento local das notas com SQLite
+  3. Armazenamento local das notas com SQLite
 */
 
 /* PROBLEMAS DO INTERPRETADOR
@@ -22,6 +24,7 @@
 */
 
 /* FEATURES DE LONGO PRAZO
+ * Criar lixeira para notas apagadas (Permitir visualizar e/ou recuperar notas apagadas)
  * Visualização em blocos (Condensar o número de notas visíveis)
  ** Menu para alterar visualização
  * Sistema de tags/cadernos (Melhorar a organização das notas)
@@ -30,12 +33,18 @@
  ** Sistema para atribuir tags/cadernos para notas
  ** Adicionar o campo nota.tags/cadernos
  ** Sistema para filtrar notas por tags/cadernos
+ * Desenvolver o menu das notas (Mais opções de personalização)
+ ** Compartilhar nota
+ ** Mudar cor da nota
+ ** Criar alarme
  * Adicionar sistema de notas criptografadas (Aumentar a privacidade)
+ * Adicionar sistema de autodestruição da nota (Aumentar privacidade)
  * Adicionar sistema de bloqueio do app com senha ou biometria (Aumentar a privacidade)
+ * Adicionar personalização para texto selecionado (Aplicar personalização ao texto existente)
+ * Adicionar markdown de forma inteligente (* abaixo de *, 2. abaixo de 1., []() envolvendo links...)
  * Adicionar sistema de notas rápidas (Direto da Home)
  * Adicionar sistema de expansão e retração das notas na Home (onLongPress?)
  * Adicionar seleção individual ou multipla de notas (onLongPress?)
- * Adicionar personalização para texto selecionado (Aplicar personalização ao texto existente)
  * Adicionar manipulação drag and drop (Ordenamento personalizado das notas)
  * Adicionar a exibição do markdown de forma simultânea (Como nas anotações do TickTick)
  * Adicionar suporte a check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown)

@@ -40,7 +40,7 @@ export default function Ordenador({
           </Text>
         </View>
       </TouchableWithoutFeedback>
-      {/* <TouchableWithoutFeedback onPress={() => setValorOrdenador(2)}>
+      <TouchableWithoutFeedback onPress={() => setValorOrdenador(2)}>
         <View style={ordenadorStyle.opcao}>
           <Text
             style={[
@@ -63,7 +63,7 @@ export default function Ordenador({
             Data de modificação (mais antiga)
           </Text>
         </View>
-      </TouchableWithoutFeedback> */}
+      </TouchableWithoutFeedback>
       <TouchableWithoutFeedback onPress={() => setValorOrdenador(4)}>
         <View style={ordenadorStyle.opcao}>
           <Text

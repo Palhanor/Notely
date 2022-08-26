@@ -23,6 +23,8 @@ const notaInicial = {
   titulo: "Introdução ao Notely",
   texto: textoDeApresentacao,
   favorito: false,
+  criacao: new Date().getTime(),
+  modificacao: new Date().getTime(),
 };
 
 export const NotasContext = createContext<INotasContext>(initialValues);
@@ -39,10 +41,13 @@ export function NotasContextProvider({ children }: { children: any }) {
         titulo: nota.titulo ? nota.titulo : `Nota ${idNota}`,
         texto: nota.texto,
         favorito: nota.favorito,
+        criacao: new Date().getTime(),
+        modificacao: new Date().getTime(),
       },
       ...notas,
     ];
     setNotas(novasNotas);
+    // console.log(notas);
   };
 
   // Atualiza uma nota antiga reeditada (Update)
@@ -53,11 +58,13 @@ export function NotasContextProvider({ children }: { children: any }) {
           ...notaAntiga,
           titulo: nota.titulo ? nota.titulo : `Nota ${nota.id}`,
           texto: nota.texto,
+          modificacao: new Date().getTime(),
         };
       }
       return { ...notaAntiga };
     });
     setNotas(novasNotas);
+    // console.log(notas);
   };
 
   // Apaga a nota que foi selecionada (Delete)

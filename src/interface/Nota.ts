@@ -3,8 +3,9 @@ export default interface INota {
     titulo: string;
     texto: string;
     favorito: boolean;
-    // criacao: Date;
-    // modificacao: Date;
+    criacao: number;
+    modificacao: number;
     // tags: string[];
     // senha: string;
+    // lixeira: boolean;
 }

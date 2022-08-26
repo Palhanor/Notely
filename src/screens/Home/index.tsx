@@ -26,7 +26,14 @@ export default function Home() {
 
   const abrirNovaNota = () => {
     navigation.navigate("Nota", {
-      nota: { id: false, titulo: "", texto: "", favorito: false },
+      nota: {
+        id: false,
+        titulo: "",
+        texto: "",
+        favorito: false,
+        criacao: 0,
+        modificacao: 0,
+      },
     });
   };
 

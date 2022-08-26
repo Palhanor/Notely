@@ -18,11 +18,13 @@ export default function ListaCards({
      * Abre ou fecha o ordenador */
     switch (valorOrdenador) {
       case 0:
-        return notas.sort((a, b) => (b.id as number) - (a.id as number));
+        return notas.sort((a, b) => b.criacao - a.criacao);
       case 1:
-        return notas.sort((a, b) => (a.id as number) - (b.id as number));
-      // case 2: return notas; // Data de modificação (mais recente)
-      // case 3: return notas; // Data de modificação (mais antiga)
+        return notas.sort((a, b) => a.criacao - b.criacao);
+      case 2:
+        return notas.sort((a, b) => b.modificacao - a.modificacao);
+      case 3:
+        return notas.sort((a, b) => a.modificacao - b.modificacao);
       case 4:
         return notas.sort((a, b) => a.titulo.localeCompare(b.titulo));
       case 5:

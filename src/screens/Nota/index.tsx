@@ -26,15 +26,21 @@ export default function FormModal() {
 
   const adicionarNota = () => {
     if (notaEmBranco && texto) {
-      const novaNota: INota = { id, titulo, texto, favorito };
+      const novaNota: INota = {
+        id,
+        titulo,
+        texto,
+        favorito,
+        criacao: notaRecebida.criacao,
+        modificacao: notaRecebida.modificacao,
+      };
       adicionaNota(novaNota);
       navigation.navigate("Home");
     } else if (!notaEmBranco && texto) {
       const notaAtualizada: INota = {
-        id: notaRecebida.id,
+        ...notaRecebida,
         titulo,
         texto,
-        favorito: notaRecebida.favorito,
       };
       atualizaNota(notaAtualizada);
       navigation.navigate("Home");
@@ -56,7 +62,14 @@ export default function FormModal() {
         />
       ) : (
         <VisualizadorNota
-          nota={{ id, titulo, texto, favorito }}
+          nota={{
+            id,
+            titulo,
+            texto,
+            favorito,
+            criacao: notaRecebida.criacao,
+            modificacao: notaRecebida.modificacao,
+          }}
           setEditando={setEditando}
         />
       )}
