@@ -73,6 +73,7 @@ export const headerStyle = StyleSheet.create({
     alignItems: "center",
     backgroundColor: COLORS.theme,
     flexDirection: "row",
+    justifyContent: "space-between",
     height: 60,
     paddingHorizontal: 20,
     width: "100%",
@@ -88,6 +89,11 @@ export const headerStyle = StyleSheet.create({
     fontWeight: "600",
     fontFamily: "notoserif",
   },
+  ferramentas: {
+    flexDirection: "row",
+    width: 60,
+    justifyContent: "space-between",
+  }
 });
 
 export const listaCardsStyle = StyleSheet.create({
@@ -105,25 +111,25 @@ export const listaCardsStyle = StyleSheet.create({
   },
 });
 
-export const menuStyle = StyleSheet.create({
-  menu: {
-    alignContent: "stretch",
-    backgroundColor: COLORS.background,
-    // backgroundColor: "red",
-    bottom: 0,
-    flexDirection: "row",
-    height: 60,
-    justifyContent: "space-between",
-    // justifyContent: "space-around",
-    left: 0,
-    marginTop: 10,
-    paddingTop: 15,
-    paddingHorizontal: 32,
-    position: "absolute",
-    width: "100%",
-    zIndex: 1,
-  },
-});
+// export const menuStyle = StyleSheet.create({
+//   menu: {
+//     alignContent: "stretch",
+//     backgroundColor: COLORS.background,
+//     // backgroundColor: "red",
+//     bottom: 0,
+//     flexDirection: "row",
+//     height: 60,
+//     justifyContent: "space-between",
+//     // justifyContent: "space-around",
+//     left: 0,
+//     marginTop: 10,
+//     paddingTop: 15,
+//     paddingHorizontal: 32,
+//     position: "absolute",
+//     width: "100%",
+//     zIndex: 1,
+//   },
+// });
 
 export const homeStyle = StyleSheet.create({
   container: {
@@ -187,6 +193,9 @@ export const buscadorStyle = StyleSheet.create({
     marginVertical: 12,
     borderRadius: 5,
   },
+  input: {
+    width: "100%",
+  }
 });
 
 export const ordenadorStyle = StyleSheet.create({

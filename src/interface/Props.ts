@@ -2,6 +2,9 @@ import INota from "./Nota";
 
 export interface HeaderProp {
   children: string;
+  setBuscando?: React.Dispatch<React.SetStateAction<boolean>>;
+  setOrdenando?: React.Dispatch<React.SetStateAction<boolean>>;
+  setValorBuscado?: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface CardProp {
@@ -42,11 +45,11 @@ export interface IconeProp {
   color: string;
 }
 
-export interface MenuProp {
-  setBuscando: React.Dispatch<React.SetStateAction<boolean>>;
-  setOrdenando: React.Dispatch<React.SetStateAction<boolean>>;
-  setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
-}
+// export interface MenuProp {
+//   setBuscando: React.Dispatch<React.SetStateAction<boolean>>;
+//   setOrdenando: React.Dispatch<React.SetStateAction<boolean>>;
+//   setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
+// }
 
 export interface BuscadorProp {
   valorBuscado: string;

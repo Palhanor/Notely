@@ -1,6 +1,7 @@
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import FeatherIcons from "react-native-vector-icons/Feather";
+import IoniconsIcons from "react-native-vector-icons/Ionicons";
 import { COLORS } from "../styles/Colors";
 import { IconeProp } from "../interface/Props";
 
@@ -49,11 +50,11 @@ export const IconeTag = () => (
 );
 
 export const IconeOrdenador = () => (
-  <FontAwesomeIcons name="sort" size={30} color={COLORS.blueGray} />
+  <FontAwesomeIcons name="sort" size={24} color={COLORS.white} />
 );
 
 export const IconeBusca = () => (
-  <FontAwesomeIcons name="search" size={30} color={COLORS.blueGray} />
+  <FontAwesomeIcons name="search" size={24} color={COLORS.white} />
 );
 
 export const IconeFavoritar = () => (
@@ -66,6 +67,10 @@ export const IconeDesfavoritar = () => (
 
 export const IconeMaisOpcoes = () => (
   <FeatherIcons name="more-vertical" size={20} color={COLORS.black} />
+);
+
+export const IconeEnviar = () => (
+  <IoniconsIcons name="send" size={24} color={COLORS.blueGray} />
 );
 
 export const IconeCopiar = () => (

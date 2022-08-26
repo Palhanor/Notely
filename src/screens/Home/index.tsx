@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Header from "../../components/Header";
 import BotaoPrincipal from "../../components/BotaoPrincipal";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 import ListaCards from "./components/ListaCards";
 import Buscador from "./components/Buscador";
 import { NotasContext } from "../../context/NotasContext";
@@ -11,6 +11,7 @@ import { NavigationStackProps } from "../../interface/Screens";
 import { useNavigation } from "@react-navigation/native";
 import { homeStyle } from "../../styles";
 import Ordenador from "./components/Ordenador";
+import NotaRapida from "./components/NotaRapida";
 
 export default function Home() {
   const { notas } = useContext(NotasContext);
@@ -40,7 +41,13 @@ export default function Home() {
   return (
     <View style={homeStyle.container}>
       <StatusBar />
-      <Header>Notely</Header>
+      <Header
+        setBuscando={setBuscando}
+        setOrdenando={setOrdenando}
+        setValorBuscado={setValorBuscado}
+      >
+        Notely
+      </Header>
       {buscando && (
         <Buscador
           valorBuscado={valorBuscado}
@@ -59,11 +66,12 @@ export default function Home() {
         valorOrdenador={valorOrdenador}
       />
       <BotaoPrincipal icone={<IconeAdicionar />} onPress={abrirNovaNota} />
-      <Menu
+      {/* <Menu
         setBuscando={setBuscando}
         setOrdenando={setOrdenando}
         setValorBuscado={setValorBuscado}
-      />
+      /> */}
+      <NotaRapida />
     </View>
   );
 }
