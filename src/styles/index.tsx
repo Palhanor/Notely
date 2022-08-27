@@ -93,7 +93,7 @@ export const headerStyle = StyleSheet.create({
     flexDirection: "row",
     width: 60,
     justifyContent: "space-between",
-  }
+  },
 });
 
 export const listaCardsStyle = StyleSheet.create({
@@ -195,7 +195,7 @@ export const buscadorStyle = StyleSheet.create({
   },
   input: {
     width: "100%",
-  }
+  },
 });
 
 export const ordenadorStyle = StyleSheet.create({
@@ -257,5 +257,31 @@ export const visualizadorNotaStyle = StyleSheet.create({
   },
   metadadosTitulo: {
     fontWeight: "600",
-  }
+  },
+});
+
+export const notaRapidaStyle = StyleSheet.create({
+  menu: {
+    backgroundColor: COLORS.ferramentas,
+    bottom: 0,
+    left: 0,
+    paddingHorizontal: 26,
+    paddingVertical: 14,
+    position: "absolute",
+    width: "100%",
+    zIndex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    maxHeight: 140,
+  },
+  inline: {
+    flexDirection: "row",
+    alignItems: "flex-end",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  input: {
+    width: "80%",
+  },
 });

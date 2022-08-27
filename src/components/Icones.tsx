@@ -69,8 +69,8 @@ export const IconeMaisOpcoes = () => (
   <FeatherIcons name="more-vertical" size={20} color={COLORS.black} />
 );
 
-export const IconeEnviar = () => (
-  <IoniconsIcons name="send" size={24} color={COLORS.blueGray} />
+export const IconeEnviar = ({ size, color }: IconeProp) => (
+  <IoniconsIcons name="send" size={size} color={color} />
 );
 
 export const IconeCopiar = () => (

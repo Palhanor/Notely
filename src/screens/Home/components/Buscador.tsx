@@ -13,7 +13,7 @@ export default function Buscador({
         placeholder="Buscar por nota!"
         value={valorBuscado}
         onChangeText={setValorBuscado}
-        style={{ width: "100%" }}
+        style={buscadorStyle.input}
       />
     </View>
   );

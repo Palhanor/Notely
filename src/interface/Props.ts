@@ -67,3 +67,8 @@ export interface CardMenuProp {
   manipularFavoritos: () => void;
   favorito: boolean;
 }
+
+export interface NotaRapidaProp {
+  notaRapidaTexto: string;
+  setNotaRapidaTexto: React.Dispatch<React.SetStateAction<string>>;
+}

@@ -1,46 +1,50 @@
-import React from "react";
-import { TextInput, View, StyleSheet } from "react-native";
+import React, { useContext } from "react";
+import { TextInput, View, TouchableOpacity } from "react-native";
 import { IconeEnviar } from "../../../components/Icones";
+import { NotasContext } from "../../../context/NotasContext";
+import INota from "../../../interface/Nota";
+import { NotaRapidaProp } from "../../../interface/Props";
+import { notaRapidaStyle } from "../../../styles";
 import { COLORS } from "../../../styles/Colors";
 
-export default function NotaRapida() {
+export default function NotaRapida({
+  notaRapidaTexto,
+  setNotaRapidaTexto,
+}: NotaRapidaProp) {
+  const { adicionaNota } = useContext(NotasContext);
+
+  const adicionarNota = () => {
+    if (notaRapidaTexto) {
+      const novaNota: INota = {
+        id: false,
+        titulo: "",
+        texto: notaRapidaTexto,
+        favorito: false,
+        criacao: 0,
+        modificacao: 0,
+      };
+      adicionaNota(novaNota);
+      setNotaRapidaTexto("");
+    }
+  };
+
   return (
-    <View style={menuStyle.menu}>
-      <View style={menuStyle.teste}>
+    <View style={notaRapidaStyle.menu}>
+      <View style={notaRapidaStyle.inline}>
         <TextInput
-          style={menuStyle.input}
+          style={notaRapidaStyle.input}
           placeholder="Nota rápida!"
+          value={notaRapidaTexto}
+          onChangeText={setNotaRapidaTexto}
           multiline
         />
-        <IconeEnviar />
+        <TouchableOpacity onPress={adicionarNota}>
+          <IconeEnviar
+            size={24}
+            color={notaRapidaTexto ? COLORS.theme : COLORS.blueGray}
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
-
-export const menuStyle = StyleSheet.create({
-  menu: {
-    backgroundColor: COLORS.ferramentas,
-    bottom: 0,
-    height: 60,
-    left: 0,
-    paddingHorizontal: 26,
-    position: "absolute",
-    width: "100%",
-    zIndex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-  },
-  teste: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-  },
-  input: {
-    width: "80%",
-    minHeight: 40,
-    maxHeight: 220,
-  },
-});

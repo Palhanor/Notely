@@ -25,6 +25,8 @@ export default function Home() {
   const [valorBuscado, setValorBuscado] = useState<string>("");
   const [valorOrdenador, setValorOrdenador] = useState<number>(0);
 
+  const [notaRapidaTexto, setNotaRapidaTexto] = useState<string>("");
+
   const abrirNovaNota = () => {
     navigation.navigate("Nota", {
       nota: {
@@ -65,13 +67,18 @@ export default function Home() {
         valorBuscado={valorBuscado}
         valorOrdenador={valorOrdenador}
       />
-      <BotaoPrincipal icone={<IconeAdicionar />} onPress={abrirNovaNota} />
+      {!notaRapidaTexto && (
+        <BotaoPrincipal icone={<IconeAdicionar />} onPress={abrirNovaNota} />
+      )}
       {/* <Menu
         setBuscando={setBuscando}
         setOrdenando={setOrdenando}
         setValorBuscado={setValorBuscado}
       /> */}
-      <NotaRapida />
+      <NotaRapida
+        notaRapidaTexto={notaRapidaTexto}
+        setNotaRapidaTexto={setNotaRapidaTexto}
+      />
     </View>
   );
 }
