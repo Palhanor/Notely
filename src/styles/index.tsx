@@ -272,7 +272,7 @@ export const ferramentasNota = StyleSheet.create({
     bottom: 60,
     left: 0,
     height: 40,
-    alignItems: "center",
+    paddingTop: 5,
     flexDirection: "row",
     position: "absolute",
     width: "100%",

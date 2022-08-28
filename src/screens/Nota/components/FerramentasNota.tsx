@@ -1,32 +1,41 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { ScrollView, TouchableOpacity } from "react-native";
 import { FerramentasNotaProp } from "../../../interface/Props";
 import { ferramentasNota } from "../../../styles";
 import {
+  IconeCitacao,
+  IconeCodigo,
   IconeHeader,
+  IconeImagem,
   IconeItalico,
+  IconeLinha,
+  IconeLink,
+  IconeListaBullet,
+  IconeListaNumero,
   IconeNegrito,
   IconeRiscado,
 } from "../../../components/Icones";
-
-/* TODO: FALTA ADICIONAR
- * Linha
- * Link
- * Imagem
- * Citacao
- * Codigo
- * Lista bullet
- * Lista numero
- */
 
 export default function FerramentasNota({
   adicionarNegrito,
   adicionarItalico,
   adicionarRiscado,
   adicionarHeader,
+  adicionarLinha,
+  adicionarLink,
+  adicionarImagem,
+  adicionarListaBullet,
+  adicionarListaNumero,
+  adicionarCitacao,
+  adicionarCodigo,
 }: FerramentasNotaProp) {
   return (
-    <View style={ferramentasNota.barra}>
+    <ScrollView
+      horizontal={true}
+      showsHorizontalScrollIndicator={false}
+      keyboardShouldPersistTaps="always"
+      style={ferramentasNota.barra}
+    >
       <TouchableOpacity
         style={ferramentasNota.botao}
         onPress={adicionarNegrito}
@@ -48,6 +57,39 @@ export default function FerramentasNota({
       <TouchableOpacity style={ferramentasNota.botao} onPress={adicionarHeader}>
         <IconeHeader />
       </TouchableOpacity>
-    </View>
+      <TouchableOpacity style={ferramentasNota.botao} onPress={adicionarLinha}>
+        <IconeLinha />
+      </TouchableOpacity>
+      <TouchableOpacity style={ferramentasNota.botao} onPress={adicionarLink}>
+        <IconeLink />
+      </TouchableOpacity>
+      <TouchableOpacity style={ferramentasNota.botao} onPress={adicionarImagem}>
+        <IconeImagem />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={ferramentasNota.botao}
+        onPress={adicionarListaBullet}
+      >
+        <IconeListaBullet />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={ferramentasNota.botao}
+        onPress={adicionarListaNumero}
+      >
+        <IconeListaNumero />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={ferramentasNota.botao}
+        onPress={adicionarCitacao}
+      >
+        <IconeCitacao />
+      </TouchableOpacity>
+      <TouchableOpacity
+        style={[ferramentasNota.botao, { marginRight: 10 }]}
+        onPress={adicionarCodigo}
+      >
+        <IconeCodigo />
+      </TouchableOpacity>
+    </ScrollView>
   );
 }

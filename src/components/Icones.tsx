@@ -2,6 +2,7 @@ import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityI
 import FontAwesomeIcons from "react-native-vector-icons/FontAwesome";
 import FeatherIcons from "react-native-vector-icons/Feather";
 import IoniconsIcons from "react-native-vector-icons/Ionicons";
+import OcticonsIcons from "react-native-vector-icons/Octicons";
 import { COLORS } from "../styles/Colors";
 import { IconeProp } from "../interface/Props";
 
@@ -103,4 +104,44 @@ export const IconeRiscado = () => (
 
 export const IconeHeader = () => (
   <FontAwesomeIcons name="header" size={16} color={COLORS.black} />
+);
+
+export const IconeLinha = () => (
+  <OcticonsIcons name="horizontal-rule" size={16} color={COLORS.black} />
+);
+
+export const IconeLink = () => (
+  <MaterialCommunityIcons name="link-variant" size={18} color={COLORS.black} />
+);
+
+export const IconeImagem = () => (
+  <FontAwesomeIcons name="image" size={16} color={COLORS.black} />
+);
+
+export const IconeListaBullet = () => (
+  <MaterialCommunityIcons
+    name="format-list-bulleted"
+    size={18}
+    color={COLORS.black}
+  />
+);
+
+export const IconeListaNumero = () => (
+  <MaterialCommunityIcons
+    name="format-list-numbered"
+    size={18}
+    color={COLORS.black}
+  />
+);
+
+export const IconeCitacao = () => (
+  <MaterialCommunityIcons
+    name="format-quote-close"
+    size={18}
+    color={COLORS.black}
+  />
+);
+
+export const IconeCodigo = () => (
+  <MaterialCommunityIcons name="code-tags" size={18} color={COLORS.black} />
 );

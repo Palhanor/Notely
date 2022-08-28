@@ -30,6 +30,8 @@ Por fim, a questão da personalização também é importante em vários aspecto
 
 ## Próximos passos
 
+Estes são alguns dos próximos desafios de implementação do sistema. É importante sempre considerar a relação Facilidade/Importância, para que o desenvolvimento seja focado no que é mais simples e principalmente mais importante para a concretização de uma boa ferramenta de notas.
+
 GERAL
 
 - [ ] Utilizar o SQLite para permitir o armazenamento dos dados localmente no dispositivo dos usuários.
@@ -67,7 +69,9 @@ EDITOR DE NOTAS
 
 - [ ] Adicionar markdown de forma inteligente (_ abaixo de _, 2. abaixo de 1., []() envolvendo links...).
 - [ ] Exibição do markdown de forma simultânea no input (Como nas anotações do TickTick). SERÁ QUE DÁ PRA FAZER UM SISTEMA QUE FICA ALTERNANDO ENTRE O INPUT E O INTERPRETADOR 120 VEZES POR SEGUNDO, PARA ASSIM GERAR A IMPRESSÃO DE QUE EDITA E VISUALIZA AO MESMO TEMPO?
-- [ ] Interpretar o check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown).
+- [ ] Interpretar o check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown). TALVEZ ISSO POSSA SER FEITO ATRAVÉS DE UM PLUGIN OU EXTENSÃO DO REACT NATIVE MARKDOWN DISPLAY
+- [ ] Interpretar calculos matemáticos. TALVEZ ISSO POSSA SER FEITO ATRAVÉS DE UM PLUGIN OU EXTENSÃO DO REACT NATIVE MARKDOWN DISPLAY
+- [ ] Permitir a escrita e interpretação de material no formato LaTeX. TALVEZ ISSO POSSA SER FEITO ATRAVÉS DE UM PLUGIN OU EXTENSÃO DO REACT NATIVE MARKDOWN DISPLAY
 - [ ] Permitir o usuário dar check em itens do check-list (Não sei se é possível).
 - [ ] Permitir a personalização das notas (Não sei se é possível).
   - Tamanho da fonte

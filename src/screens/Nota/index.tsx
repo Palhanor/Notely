@@ -74,6 +74,7 @@ export default function FormModal() {
       );
     });
   };
+
   const adicionarItalico = () => {
     setTexto((textoAnterior) => {
       return (
@@ -85,6 +86,7 @@ export default function FormModal() {
       );
     });
   };
+
   const adicionarRiscado = () => {
     setTexto((textoAnterior) => {
       return (
@@ -96,12 +98,89 @@ export default function FormModal() {
       );
     });
   };
+
   const adicionarHeader = () => {
     setTexto((textoAnterior) => {
       return (
         textoAnterior.slice(0, posicaoCursorInicial) +
         "### " +
         textoAnterior.slice(posicaoCursorInicial)
+      );
+    });
+  };
+
+  const adicionarLinha = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "\n\n---\n\n" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+
+  const adicionarLink = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "[" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "](url)" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+
+  const adicionarImagem = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "![" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "](url)" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+
+  const adicionarListaBullet = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "- " +
+        textoAnterior.slice(posicaoCursorInicial)
+      );
+    });
+  };
+
+  const adicionarListaNumero = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "1. " +
+        textoAnterior.slice(posicaoCursorInicial)
+      );
+    });
+  };
+
+  const adicionarCitacao = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "> " +
+        textoAnterior.slice(posicaoCursorInicial)
+      );
+    });
+  };
+
+  const adicionarCodigo = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "```\n" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "\n```" +
+        textoAnterior.slice(posicaoCursorFinal)
       );
     });
   };
@@ -124,6 +203,13 @@ export default function FormModal() {
             adicionarItalico={adicionarItalico}
             adicionarRiscado={adicionarRiscado}
             adicionarHeader={adicionarHeader}
+            adicionarLinha={adicionarLinha}
+            adicionarLink={adicionarLink}
+            adicionarImagem={adicionarImagem}
+            adicionarListaBullet={adicionarListaBullet}
+            adicionarListaNumero={adicionarListaNumero}
+            adicionarCitacao={adicionarCitacao}
+            adicionarCodigo={adicionarCodigo}
           />
         </>
       ) : (

@@ -1,5 +1,3 @@
-// FEATURES DE LONGO PRAZO (Matriz Facilidade/Importancia)
-
 import React from "react";
 import Home from "./src/screens/Home";
 import Nota from "./src/screens/Nota";

@@ -75,4 +75,11 @@ export interface FerramentasNotaProp {
   adicionarItalico: () => void;
   adicionarRiscado: () => void;
   adicionarHeader: () => void;
+  adicionarLinha: () => void;
+  adicionarListaBullet: () => void;
+  adicionarListaNumero: () => void;
+  adicionarLink: () => void;
+  adicionarImagem: () => void;
+  adicionarCitacao: () => void;
+  adicionarCodigo: () => void;
 }
