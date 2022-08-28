@@ -6,19 +6,23 @@ import { COLORS } from "../styles/Colors";
 import { IconeProp } from "../interface/Props";
 
 export const IconeRetornar = () => (
-  <MaterialCommunityIcons name="chevron-left" size={30} color="#FFF" />
+  <MaterialCommunityIcons name="chevron-left" size={30} color={COLORS.white} />
 );
 
 export const IconeAdicionar = () => (
-  <MaterialCommunityIcons name="plus" size={30} color="#FFF" />
+  <MaterialCommunityIcons name="plus" size={30} color={COLORS.white} />
 );
 
 export const IconeVisualizar = () => (
-  <MaterialCommunityIcons name="note-outline" size={30} color="#FFF" />
+  <MaterialCommunityIcons name="note-outline" size={30} color={COLORS.white} />
 );
 
 export const IconeEditar = () => (
-  <MaterialCommunityIcons name="pencil-outline" size={30} color="#FFF" />
+  <MaterialCommunityIcons
+    name="pencil-outline"
+    size={30}
+    color={COLORS.white}
+  />
 );
 
 export const IconeLixo = ({ size, color }: IconeProp) => (

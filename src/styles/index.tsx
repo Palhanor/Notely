@@ -27,7 +27,7 @@ export const cardStyle = StyleSheet.create({
     marginRight: 12,
   },
   notaAberta: {
-    backgroundColor: COLORS.cardBackground,
+    backgroundColor: COLORS.white,
     borderColor: COLORS.cardBorder,
     borderRadius: 10,
     borderWidth: 1,
@@ -36,7 +36,6 @@ export const cardStyle = StyleSheet.create({
     overflow: "hidden",
     paddingVertical: 10,
     paddingHorizontal: 16,
-    shadowColor: COLORS.cardShadow,
     width: Dimensions.get("window").width - 32,
   },
   notaCard: {
@@ -50,7 +49,6 @@ export const cardStyle = StyleSheet.create({
     overflow: "hidden",
     paddingVertical: 10,
     paddingHorizontal: 16,
-    shadowColor: COLORS.cardShadow,
     width: Dimensions.get("window").width - 32,
   },
   tituloNotaCard: {
@@ -225,7 +223,7 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#F6B6C1",
+    backgroundColor: COLORS.babyRed,
   },
   copiar: {
     marginVertical: 6,
@@ -234,7 +232,7 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#B6E1F6",
+    backgroundColor: COLORS.babyBlue,
   },
   favoritar: {
     marginVertical: 6,
@@ -243,7 +241,7 @@ export const cardMenuStyle = StyleSheet.create({
     justifyContent: "center",
     padding: 12,
     borderRadius: 3,
-    backgroundColor: "#F6EBB6",
+    backgroundColor: COLORS.babyYellow,
   },
 });
 

@@ -1,6 +1,7 @@
 import { createContext, useState } from "react";
 import { INotasContext } from "../interface/INotasContext";
 import INota from "../interface/Nota";
+import criaTitulo from "../utils/geradorTitulos";
 import IdGenerator from "../utils/IdGenerator";
 
 const initialValues: INotasContext = {
@@ -38,7 +39,7 @@ export function NotasContextProvider({ children }: { children: any }) {
     const novasNotas = [
       {
         id: idNota,
-        titulo: nota.titulo ? nota.titulo : `Nota ${idNota}`,
+        titulo: nota.titulo ? nota.titulo : criaTitulo(nota.texto),
         texto: nota.texto,
         favorito: nota.favorito,
         criacao: new Date().getTime(),
