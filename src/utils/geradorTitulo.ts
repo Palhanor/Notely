@@ -1,4 +1,6 @@
-export default function criaTitulo(texto: string) {
+// TODO: O sistema retorna valor "Nota sem nome" caso o primeiro caractere seja um \n
+
+export default function geradorTitulo(texto: string) {
     const temQuebraDeLinha = /\n/.test(texto);
 
     if (!temQuebraDeLinha && texto.length > 24) {

@@ -22,9 +22,9 @@ export default function VisualizadorNota({
     .slice(0, 5);
 
   const dataModificacao = new Date(nota.modificacao).toLocaleDateString();
-  const modificacaoMes = dataCriacao[0] + dataCriacao[1];
-  const modificacaoDia = dataCriacao[3] + dataCriacao[4];
-  const modificacaoAno = dataCriacao[6] + dataCriacao[7];
+  const modificacaoMes = dataModificacao[0] + dataModificacao[1];
+  const modificacaoDia = dataModificacao[3] + dataModificacao[4];
+  const modificacaoAno = dataModificacao[6] + dataModificacao[7];
   const dataModificacaoBR = `${modificacaoDia}/${modificacaoMes}/${modificacaoAno}`;
   const horarioModificacao = new Date(nota.modificacao)
     .toLocaleTimeString()
@@ -56,6 +56,7 @@ export default function VisualizadorNota({
       <BotaoPrincipal
         icone={<IconeEditar />}
         onPress={() => setEditando(true)}
+        altura={80}
       />
     </>
   );

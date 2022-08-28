@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import Header from "../../components/Header";
 import BotaoPrincipal from "../../components/BotaoPrincipal";
-// import Menu from "./components/Menu";
 import ListaCards from "./components/ListaCards";
 import Buscador from "./components/Buscador";
 import { NotasContext } from "../../context/NotasContext";
@@ -68,13 +67,12 @@ export default function Home() {
         valorOrdenador={valorOrdenador}
       />
       {!notaRapidaTexto && (
-        <BotaoPrincipal icone={<IconeAdicionar />} onPress={abrirNovaNota} />
+        <BotaoPrincipal
+          icone={<IconeAdicionar />}
+          onPress={abrirNovaNota}
+          altura={80}
+        />
       )}
-      {/* <Menu
-        setBuscando={setBuscando}
-        setOrdenando={setOrdenando}
-        setValorBuscado={setValorBuscado}
-      /> */}
       <NotaRapida
         notaRapidaTexto={notaRapidaTexto}
         setNotaRapidaTexto={setNotaRapidaTexto}

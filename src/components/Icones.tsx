@@ -84,3 +84,23 @@ export const IconeCopiar = () => (
     color={COLORS.black}
   />
 );
+
+export const IconeNegrito = () => (
+  <MaterialCommunityIcons name="format-bold" size={25} color={COLORS.black} />
+);
+
+export const IconeItalico = () => (
+  <MaterialCommunityIcons name="format-italic" size={25} color={COLORS.black} />
+);
+
+export const IconeRiscado = () => (
+  <MaterialCommunityIcons
+    name="format-strikethrough-variant"
+    size={18}
+    color={COLORS.black}
+  />
+);
+
+export const IconeHeader = () => (
+  <FontAwesomeIcons name="header" size={16} color={COLORS.black} />
+);

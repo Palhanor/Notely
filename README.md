@@ -18,7 +18,7 @@ Atualmente existem diversos sistemas de gestão de notas no mercado, e muitos co
 
 Em muitas ocasiões os usuários preferem utilizar sistemas não voltados para notas, como um grupo individual no WhatsApp ou o chat de mensagens salvas no Telegram. Isso se dá, pois, mesmo com as limitações de personalização e filtragem, estes sistemas são diretos quando se trata do processe de abrir o app, escrever a nota e salva-la. Por isso o **Notely** conta com o sitema de Notas rápidas sempre disponível para todos os usuários.
 
-Por fim, a questão da personalização também é importante em vários aspectos. Acontece que em determinados casos sequer é possível deixar determinados termos das notas em negrito, ou criar linhas verticais para seprar conteúdos. Por isso, o sistema do **Notely** sustena interpretação de notação markdown de forma nativa, o que permite  interpretação das notas com estilos padronizados, mesmo que estas sejam armazenadas na forma de texto puro, o que economiza armazenamento.
+Por fim, a questão da personalização também é importante em vários aspectos. Acontece que em determinados casos sequer é possível deixar determinados termos das notas em negrito, ou criar linhas verticais para seprar conteúdos. Por isso, o sistema do **Notely** sustena interpretação de notação markdown de forma nativa, o que permite interpretação das notas com estilos padronizados, mesmo que estas sejam armazenadas na forma de texto puro, o que economiza armazenamento.
 
 ## Inspirações
 
@@ -26,11 +26,12 @@ Por fim, a questão da personalização também é importante em vários aspecto
 - **Notion** - Este por sua vez se trata de um sistema All-in-one, que dá suporte para quase todo tipo de ferramentas em termos de organização de conteúdos. Por ser muito abrangente, não é tão indicado para servir simplesmente como um sistema de notas, mas no geral pode constribuir com insights para estes.
 - **Google Keep** - O serviço de notas da Google é extremamente utilizado, e por isso deve ser tomado como um referencial detro da área. Contudo, este ainda peca em não ser tão otimizado e não suportar quaisquer formas de personalização das notas.
 - **Docs** - Também uma ferramenta da Google, este é o oposto do Keep, no sentido de que permite uma personalização extrema dos documentos escritos. Contudo, este já adota uma caracterítica demasiado robusta para servir como um sistema de notas, sendo ainda menos otimizado e focado em usabilidade.
-- **Mensageiros** - Como mencionado anteriormente, sistemas como o *WhatsApp* e *Telegram* não se enquadram como sistemas de notas, mas diversos usuários se aproveitam de sua simplicidade para armazenar informações nos mesmos. É importante citar que estes se encontram entre os sistemas de melhor usabilidade, mas não contam com tantas ferramentas voltadas para a organização das notas.
+- **Mensageiros** - Como mencionado anteriormente, sistemas como o _WhatsApp_ e _Telegram_ não se enquadram como sistemas de notas, mas diversos usuários se aproveitam de sua simplicidade para armazenar informações nos mesmos. É importante citar que estes se encontram entre os sistemas de melhor usabilidade, mas não contam com tantas ferramentas voltadas para a organização das notas.
 
 ## Próximos passos
 
 GERAL
+
 - [ ] Utilizar o SQLite para permitir o armazenamento dos dados localmente no dispositivo dos usuários.
 - [ ] Criar lixeira para notas apagadas (Permitir visualizar e/ou recuperar notas apagadas).
 - [ ] Sistema de tags/cadernos (Melhorar a organização das notas).
@@ -42,6 +43,7 @@ GERAL
 - [ ] Permitir o armazenamento das notas dos usuários em um servidor externo.
 
 HOME
+
 - [ ] Visualização em blocos (Condensar o número de notas visíveis).
   - Menu para alterar visualização
 
@@ -63,9 +65,8 @@ SEGURANÇA
 
 EDITOR DE NOTAS
 
-- [ ] Aplicação de markdown em texto selecionado (Simplificar a escrita personalizada).
 - [ ] Adicionar markdown de forma inteligente (_ abaixo de _, 2. abaixo de 1., []() envolvendo links...).
-- [ ] Exibição do markdown de forma simultânea no input (Como nas anotações do TickTick).
+- [ ] Exibição do markdown de forma simultânea no input (Como nas anotações do TickTick). SERÁ QUE DÁ PRA FAZER UM SISTEMA QUE FICA ALTERNANDO ENTRE O INPUT E O INTERPRETADOR 120 VEZES POR SEGUNDO, PARA ASSIM GERAR A IMPRESSÃO DE QUE EDITA E VISUALIZA AO MESMO TEMPO?
 - [ ] Interpretar o check-list com markdown (Talvez seja necessário mudar a biblioteca de markdown).
 - [ ] Permitir o usuário dar check em itens do check-list (Não sei se é possível).
 - [ ] Permitir a personalização das notas (Não sei se é possível).
@@ -94,7 +95,6 @@ EDITOR DE NOTAS
 Lista de contribuidores:
 
 - [Lucas Palhano](https://github.com/Palhanor)
-
 
 ## Tópicos futuros
 

@@ -4,11 +4,16 @@ import INota from "../../interface/Nota";
 import { NotasContext } from "../../context/NotasContext";
 import { NavigationStackProps } from "../../interface/Screens";
 import Header from "../../components/Header";
-import { View } from "react-native";
 import SalvarNota from "./components/SalvarNota";
 import VisualizadorNota from "./components/VisualizadorNota";
 import EditorNota from "./components/EditorNota";
 import { notaStyle } from "../../styles";
+import FerramentasNota from "./components/FerramentasNota";
+import {
+  NativeSyntheticEvent,
+  TextInputSelectionChangeEventData,
+  View,
+} from "react-native";
 
 export default function FormModal() {
   const { adicionaNota, atualizaNota } = useContext(NotasContext);
@@ -23,6 +28,8 @@ export default function FormModal() {
   const [texto, setTexto] = useState<string>(notaRecebida.texto);
   const [id, setId] = useState<number | boolean>(notaRecebida.id);
   const [favorito, setFavorito] = useState<boolean>(notaRecebida.favorito);
+  const [posicaoCursorInicial, setPosicaoCursorInicial] = useState<number>(0);
+  const [posicaoCursorFinal, setPosicaoCursorFinal] = useState<number>(0);
 
   const adicionarNota = () => {
     if (notaEmBranco && texto) {
@@ -49,17 +56,76 @@ export default function FormModal() {
     setTexto("");
   };
 
+  const posicaoCursor = (
+    event: NativeSyntheticEvent<TextInputSelectionChangeEventData>
+  ) => {
+    setPosicaoCursorInicial(event.nativeEvent.selection.start);
+    setPosicaoCursorFinal(event.nativeEvent.selection.end);
+  };
+
+  const adicionarNegrito = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "**" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "**" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+  const adicionarItalico = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "*" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "*" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+  const adicionarRiscado = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "~~" +
+        textoAnterior.slice(posicaoCursorInicial, posicaoCursorFinal) +
+        "~~" +
+        textoAnterior.slice(posicaoCursorFinal)
+      );
+    });
+  };
+  const adicionarHeader = () => {
+    setTexto((textoAnterior) => {
+      return (
+        textoAnterior.slice(0, posicaoCursorInicial) +
+        "### " +
+        textoAnterior.slice(posicaoCursorInicial)
+      );
+    });
+  };
+
   return (
     <View style={notaStyle.containerModal}>
       <Header>Nota</Header>
       {editando ? (
-        <EditorNota
-          titulo={titulo}
-          texto={texto}
-          setTitulo={setTitulo}
-          setTexto={setTexto}
-          setEditando={setEditando}
-        />
+        <>
+          <EditorNota
+            titulo={titulo}
+            texto={texto}
+            setTitulo={setTitulo}
+            setTexto={setTexto}
+            setEditando={setEditando}
+            posicaoCursor={posicaoCursor}
+          />
+          <FerramentasNota
+            adicionarNegrito={adicionarNegrito}
+            adicionarItalico={adicionarItalico}
+            adicionarRiscado={adicionarRiscado}
+            adicionarHeader={adicionarHeader}
+          />
+        </>
       ) : (
         <VisualizadorNota
           nota={{

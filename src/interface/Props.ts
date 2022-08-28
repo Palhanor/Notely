@@ -1,3 +1,4 @@
+import { NativeSyntheticEvent, TextInputSelectionChangeEventData } from "react-native";
 import INota from "./Nota";
 
 export interface HeaderProp {
@@ -18,6 +19,7 @@ export interface EditorNotaProp {
   setTitulo: React.Dispatch<React.SetStateAction<string>>;
   setTexto: React.Dispatch<React.SetStateAction<string>>;
   setEditando: React.Dispatch<React.SetStateAction<boolean>>;
+  posicaoCursor: (e: NativeSyntheticEvent<TextInputSelectionChangeEventData>) => void;
 }
 
 export interface VisualizadorNotaProp {
@@ -38,18 +40,13 @@ export interface ListaCardsProp {
 export interface BotaoPrincipalProp {
   icone: JSX.Element;
   onPress: () => void;
+  altura: number
 }
 
 export interface IconeProp {
   size: number;
   color: string;
 }
-
-// export interface MenuProp {
-//   setBuscando: React.Dispatch<React.SetStateAction<boolean>>;
-//   setOrdenando: React.Dispatch<React.SetStateAction<boolean>>;
-//   setValorBuscado: React.Dispatch<React.SetStateAction<string>>;
-// }
 
 export interface BuscadorProp {
   valorBuscado: string;
@@ -71,4 +68,11 @@ export interface CardMenuProp {
 export interface NotaRapidaProp {
   notaRapidaTexto: string;
   setNotaRapidaTexto: React.Dispatch<React.SetStateAction<string>>;
+}
+
+export interface FerramentasNotaProp {
+  adicionarNegrito: () => void;
+  adicionarItalico: () => void;
+  adicionarRiscado: () => void;
+  adicionarHeader: () => void;
 }

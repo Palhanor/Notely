@@ -6,10 +6,14 @@ import { botaoPrincipalStyle } from "../styles";
 export default function BotaoPrincipal({
   icone,
   onPress,
+  altura,
 }: BotaoPrincipalProp) {
   return (
-    <TouchableOpacity style={botaoPrincipalStyle.botaoPrincipal} onPress={onPress}>
-      <Text style={botaoPrincipalStyle.posicaoIcone}>{icone}</Text>
+    <TouchableOpacity
+      style={botaoPrincipalStyle(altura).botaoPrincipal}
+      onPress={onPress}
+    >
+      <Text style={botaoPrincipalStyle().posicaoIcone}>{icone}</Text>
     </TouchableOpacity>
   );
 }

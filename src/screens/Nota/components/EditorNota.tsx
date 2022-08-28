@@ -11,6 +11,7 @@ export default function EditorNota({
   setTitulo,
   setTexto,
   setEditando,
+  posicaoCursor,
 }: EditorNotaProp) {
   return (
     <>
@@ -27,10 +28,12 @@ export default function EditorNota({
         onChangeText={setTexto}
         value={texto}
         placeholder="Nota"
+        onSelectionChange={(e) => posicaoCursor(e)}
       ></TextInput>
       <BotaoPrincipal
         icone={<IconeVisualizar />}
         onPress={() => setEditando(false)}
+        altura={120}
       />
     </>
   );

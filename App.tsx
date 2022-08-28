@@ -1,14 +1,4 @@
 // FEATURES DE LONGO PRAZO (Matriz Facilidade/Importancia)
-/* FEATURES DE CURTO PRAZO
-  1. Ferramentas de personalização das notas
-    * Adidionar link
-    * Adicionar imagem
-    * Adicionar linha
-    * Adicionar negrito
-    * Adicionar italico
-    * Adicionar riscado
-    * Adicionar tabela...
-*/
 
 import React from "react";
 import Home from "./src/screens/Home";

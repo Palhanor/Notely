@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 import { INotasContext } from "../interface/INotasContext";
 import INota from "../interface/Nota";
-import criaTitulo from "../utils/geradorTitulos";
-import IdGenerator from "../utils/IdGenerator";
+import geradorTitulo from "../utils/geradorTitulo";
+import geradorId from "../utils/geradorId";
 
 const initialValues: INotasContext = {
   notas: [],
@@ -35,11 +35,11 @@ export function NotasContextProvider({ children }: { children: any }) {
 
   // Adiciona uma nova nota na lista de notas (Create)
   const adicionaNota = (nota: INota) => {
-    const idNota = IdGenerator();
+    const idNota = geradorId();
     const novasNotas = [
       {
         id: idNota,
-        titulo: nota.titulo ? nota.titulo : criaTitulo(nota.texto),
+        titulo: nota.titulo ? nota.titulo : geradorTitulo(nota.texto),
         texto: nota.texto,
         favorito: nota.favorito,
         criacao: new Date().getTime(),

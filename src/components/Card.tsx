@@ -9,6 +9,7 @@ import { cardStyle } from "../styles";
 import { IconeMaisOpcoes } from "./Icones";
 import CardMenu from "./CardMenu";
 import * as Clipboard from "expo-clipboard";
+import geradorTitulo from "../utils/geradorTitulo";
 
 export default function Card({ card, tipo }: CardProp) {
   const { apagarNota, favoritosNota } = useContext(NotasContext);
@@ -52,7 +53,7 @@ export default function Card({ card, tipo }: CardProp) {
               : cardStyle.tituloNotaVisualizacao
           }
         >
-          {card.titulo}
+          {card.titulo ? card.titulo : geradorTitulo(card.texto)}
         </Text>
         {tipo === "lista" && (
           <TouchableOpacity

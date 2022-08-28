@@ -1,22 +1,23 @@
 import { Dimensions, StyleSheet } from "react-native";
 import { COLORS } from "./Colors";
 
-export const botaoPrincipalStyle = StyleSheet.create({
-  botaoPrincipal: {
-    backgroundColor: COLORS.theme,
-    borderRadius: 60,
-    bottom: 80,
-    height: 60,
-    padding: 12,
-    position: "absolute",
-    right: 16,
-    width: 60,
-    zIndex: 1,
-  },
-  posicaoIcone: {
-    textAlign: "center",
-  },
-});
+export const botaoPrincipalStyle = (altura?: number) =>
+  StyleSheet.create({
+    botaoPrincipal: {
+      backgroundColor: COLORS.theme,
+      borderRadius: 60,
+      bottom: altura,
+      height: 60,
+      padding: 12,
+      position: "absolute",
+      right: 16,
+      width: 60,
+      zIndex: 1,
+    },
+    posicaoIcone: {
+      textAlign: "center",
+    },
+  });
 
 export const cardStyle = StyleSheet.create({
   campoTitulo: {
@@ -109,26 +110,6 @@ export const listaCardsStyle = StyleSheet.create({
   },
 });
 
-// export const menuStyle = StyleSheet.create({
-//   menu: {
-//     alignContent: "stretch",
-//     backgroundColor: COLORS.background,
-//     // backgroundColor: "red",
-//     bottom: 0,
-//     flexDirection: "row",
-//     height: 60,
-//     justifyContent: "space-between",
-//     // justifyContent: "space-around",
-//     left: 0,
-//     marginTop: 10,
-//     paddingTop: 15,
-//     paddingHorizontal: 32,
-//     position: "absolute",
-//     width: "100%",
-//     zIndex: 1,
-//   },
-// });
-
 export const homeStyle = StyleSheet.create({
   container: {
     alignItems: "center",
@@ -161,7 +142,8 @@ export const salvarNotaStyle = StyleSheet.create({
     backgroundColor: COLORS.theme,
     bottom: 0,
     left: 0,
-    padding: 18,
+    height: 60,
+    justifyContent: "center",
     position: "absolute",
     width: "100%",
     zIndex: 1,
@@ -281,5 +263,26 @@ export const notaRapidaStyle = StyleSheet.create({
   },
   input: {
     width: "80%",
+  },
+});
+
+export const ferramentasNota = StyleSheet.create({
+  barra: {
+    backgroundColor: COLORS.ferramentas,
+    bottom: 60,
+    left: 0,
+    height: 40,
+    alignItems: "center",
+    flexDirection: "row",
+    position: "absolute",
+    width: "100%",
+    zIndex: 1,
+  },
+  botao: {
+    alignItems: "center",
+    justifyContent: "center",
+    width: 30,
+    height: 30,
+    marginLeft: 10,
   },
 });

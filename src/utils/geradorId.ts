@@ -1,4 +1,4 @@
 let contador = 1
-export default function IdGenerator() {
+export default function geradorId() {
     return contador++;
 }
