@@ -3,6 +3,7 @@ import { INotasContext } from "../interface/INotasContext";
 import INota from "../interface/Nota";
 import geradorTitulo from "../utils/geradorTitulo";
 import geradorId from "../utils/geradorId";
+import notaInicial from "../utils/notaInicial";
 
 const initialValues: INotasContext = {
   notas: [],
@@ -10,22 +11,6 @@ const initialValues: INotasContext = {
   atualizaNota: () => {},
   apagarNota: () => {},
   favoritosNota: () => {},
-};
-
-const textoDeApresentacao = `
-## 📄 **Bem vindo ao Notely**
-
-Com o **Notely** você será capaz de avançar para o próximo nível! 🥳🎉🎊
-
-Mais informações: [Notely](https://www.google.com)`;
-
-const notaInicial = {
-  id: 0,
-  titulo: "Introdução ao Notely",
-  texto: textoDeApresentacao,
-  favorito: false,
-  criacao: new Date().getTime(),
-  modificacao: new Date().getTime(),
 };
 
 export const NotasContext = createContext<INotasContext>(initialValues);
