@@ -29,6 +29,7 @@ export function NotasContextProvider({ children }: { children: any }) {
         favorito: nota.favorito,
         criacao: new Date().getTime(),
         modificacao: new Date().getTime(),
+        apagado: nota.apagado,
       },
       ...notas,
     ];

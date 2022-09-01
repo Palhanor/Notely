@@ -43,26 +43,26 @@ Estes são alguns dos próximos desafios de implementação do sistema. É impor
  
 | ID | Feature | Relevância | Dificuldade |
 | -- | ------- | ---------- | ----------- |
-| 0 | Ajeitar a splashscreen e o ícone do aplicativo | 10 | 03 |
-| 1 | Resolver o problema da barra de ferramentas ficar em cima no input multiline | 10 | 05 |
-| 2 | Criar uma scrollbar grande e redonda para ser fácil navegar, e deixar ela invisível quando não estiver acontecendo scroll | 08 | 04 |
+| 0 | ~~Ajeitar a splashscreen e o ícone do aplicativo~~ | 10 | 03 |
+| 1 | ~~Resolver o problema da barra de ferramentas ficar em cima no input multiline~~ | 10 | 05 |
+| 2 | Criar uma scrollbar grande e redonda para ser fácil navegar, e deixar ela invisível quando não estiver acontecendo scroll | 08 | 07 |
 | 3 | Adicionar campo de emojis na barra de ferramentas | 03 | 03 |
 | 4 | Utilizar o SQLite para permitir o armazenamento dos dados localmente no dispositivo dos usuários | 10 | 08 |
-| 5 | Criar lixeira para notas apagadas para permitir visualizar e/ou recuperar notas apagadas (Organizar como Favoritas, Geral e Apagadas) | 09 | 07 |
+| 5 | Criar lixeira para notas apagadas para permitir visualizar e/ou recuperar notas apagadas (Organizar como Favoritas, Geral e Apagadas) | 09 | 08 |
 | 6 | Sistema de tags/cadernos (Será necessário criar formas de criar, apagar, atribuir, remover e filtrar as tags/cadernos) | 07 | 08 |
 | 7 | Permitir o armazenamento das notas dos usuários em um servidor externo | 10 | 10 |
 | 8 | Adicionar um local de configurações onde o usuário pode dizer o tamanho dos cards (escolher um valor fixo, tamanho ajustável) | 05 | 06 |
 | 9 | Criar um tema escuro para o aplicativo e permitir alterar | 04 | 06 |
 | 10 | Visualização em blocos (Duas notas por linha) | 06 | 06 |
 | 11 | Visualização de listas (A nota fica apenas com o título, ocultando o conteúdo) | 06 | 06 |
-| 12 | Adicionar mais opções no menu das notas (Compartilhar nota) | 05 | 05 |
+| 12 | Adicionar mais opções no menu das notas (Compartilhar nota...) | 05 | 05 |
 | 13 | Seleção múltipla de notas com onLongPress | 09 | 07 |
 | 14 | Expansão e retração das notas na Home | 03 | 04 |
 | 15 | Manipulação de notas com drag and drop (Ordenamento personalizado) | 06 | 06 |
 | 16 | Notas criptografadas | 04 | 05 |
 | 17 | Autodestruição da nota com timer | 04 | 06 |
-| 18 | Permitir bloqueio do app com senha ou biometria | 08 | 07 |
-| 19 | Desmarcar um elemento caso ele já esteja marcado com uma notação markdown e o usuário selecionar e tocar no mesmo marcador | 07 | 04 |
+| 18 | Permitir bloqueio do app com senha ou biometria (LocalAuthentication) | 08 | 08 |
+| 19 | ~~Desmarcar um elemento caso ele já esteja marcado com uma notação markdown e o usuário selecionar e tocar no mesmo marcador~~ | 07 | 04 |
 | 20 | Adicionar novos tipos de estilização: sublinhado, grifado, checklist (markdown-it-task-lists), dropdown (markdown-it-container, tab, retornar, avançar | 10 | 07 |
 | 21 | Criar um sistema para receber informações de edição como um modal para texto e link, ou para link da imagem, ou para selecionar o tipo de título | 08 | 06 |
 | 22 | Adicionar markdown de forma dinâmica de acordo com as inserções do usuário | 10 | 06 |

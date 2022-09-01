@@ -5,7 +5,5 @@ export default interface INota {
     favorito: boolean;
     criacao: number;
     modificacao: number;
-    // apagado: boolean;
-    // tags: string[];
-    // senha: string;
+    apagado: boolean;
 }

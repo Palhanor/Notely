@@ -1,5 +1,5 @@
-import React from "react";
-import { TextInput } from "react-native";
+import React, { useEffect, useState } from "react";
+import { Keyboard, TextInput } from "react-native";
 import { EditorNotaProp } from "../../../interface/Props";
 import { IconeVisualizar } from "../../../components/Icones";
 import BotaoPrincipal from "../../../components/BotaoPrincipal";
@@ -13,6 +13,32 @@ export default function EditorNota({
   setEditando,
   posicaoCursor,
 }: EditorNotaProp) {
+  const [tecladoAberto, setTecladoAberto] = useState(false);
+
+  const abrindoTeclado = () => {
+    setTecladoAberto(true);
+  };
+
+  const fechandoTeclado = () => {
+    setTecladoAberto(false);
+  };
+
+  useEffect(() => {
+    const keyboardDidShowListener = Keyboard.addListener(
+      "keyboardDidShow",
+      abrindoTeclado
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      "keyboardDidHide",
+      fechandoTeclado
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
+
   return (
     <>
       <TextInput
@@ -24,7 +50,10 @@ export default function EditorNota({
       <TextInput
         multiline
         numberOfLines={8}
-        style={editorNotaStyle.multiline}
+        style={[
+          editorNotaStyle.multiline,
+          tecladoAberto ? { height: "50%" } : { height: "65%" },
+        ]}
         onChangeText={setTexto}
         value={texto}
         placeholder="Nota"

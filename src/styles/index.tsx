@@ -102,7 +102,7 @@ export const listaCardsStyle = StyleSheet.create({
     width: "100%",
   },
   header: {
-    fontSize: 17,
+    fontSize: 16,
     color: COLORS.blueGray,
     marginLeft: 16,
     marginBottom: 12,
@@ -128,7 +128,6 @@ export const editorNotaStyle = StyleSheet.create({
     width: Dimensions.get("window").width - 32,
   },
   multiline: {
-    height: "60%",
     marginVertical: 8,
     marginHorizontal: 16,
     padding: 8,

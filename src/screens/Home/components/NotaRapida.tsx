@@ -22,6 +22,7 @@ export default function NotaRapida({
         favorito: false,
         criacao: 0,
         modificacao: 0,
+        apagado: false,
       };
       adicionaNota(novaNota);
       setNotaRapidaTexto("");

@@ -35,6 +35,7 @@ export default function Home() {
         favorito: false,
         criacao: 0,
         modificacao: 0,
+        apagado: false,
       },
     });
   };

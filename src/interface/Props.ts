@@ -71,15 +71,7 @@ export interface NotaRapidaProp {
 }
 
 export interface FerramentasNotaProp {
-  adicionarNegrito: () => void;
-  adicionarItalico: () => void;
-  adicionarRiscado: () => void;
-  adicionarHeader: () => void;
-  adicionarLinha: () => void;
-  adicionarListaBullet: () => void;
-  adicionarListaNumero: () => void;
-  adicionarLink: () => void;
-  adicionarImagem: () => void;
-  adicionarCitacao: () => void;
-  adicionarCodigo: () => void;
+  setTexto: React.Dispatch<React.SetStateAction<string>>;
+  posicaoCursorInicial: number;
+  posicaoCursorFinal: number;
 }

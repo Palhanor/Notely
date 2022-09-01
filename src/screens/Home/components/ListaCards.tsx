@@ -50,7 +50,9 @@ export default function ListaCards({
     <ScrollView style={listaCardsStyle.lista}>
       {notasFavoritas.length > 0 && (
         <View>
-          <Text style={listaCardsStyle.header}>Favoritas</Text>
+          <Text style={listaCardsStyle.header}>
+            Favoritas &#x2022; {notasFavoritas.length}
+          </Text>
           {notasFavoritas.map((nota) => (
             <Card card={nota} tipo="lista" key={nota.id as number} />
           ))}
@@ -58,7 +60,9 @@ export default function ListaCards({
       )}
       <View>
         {notasFavoritas.length > 0 && notasNormais.length > 0 && (
-          <Text style={listaCardsStyle.header}>Outras</Text>
+          <Text style={listaCardsStyle.header}>
+            Geral &#x2022; {notasNormais.length}
+          </Text>
         )}
         {notasNormais.map((nota) => (
           <Card card={nota} tipo="lista" key={nota.id as number} />
