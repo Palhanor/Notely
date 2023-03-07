@@ -75,6 +75,7 @@ Estes são alguns dos próximos desafios de implementação do sistema. É impor
 | 29 | Trocar os Alert por modais personalizados do sistema | 04 | 06 |
 | 30 | Criar sistema de dropdown dentro dos campos de Favoritas, Geral e Apagadas | 06 | 04 |
 | 31 | Otimizar a performance do sistema evitando fluxo de dados e atualizações de componentes de forma desnecessária | 08 | 08 |
+| 32 | Usar importação dinâmica para aumentar a escalabilidade do projeto | 05 | 03 |
 
 
 ### Desenvolvedores

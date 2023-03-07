@@ -96,6 +96,7 @@ export default function FerramentasNota({
     });
   };
 
+  // Adiucionar em cada linha individualmente
   const adicionarHeader = () => {
     setTexto((textoAnterior) => {
       const conteudo = textoAnterior.slice(
@@ -138,7 +139,7 @@ export default function FerramentasNota({
     });
   };
 
-  // Não remove a notação
+  // Criar sistema para removes a notação
   const adicionarLink = () => {
     setTexto((textoAnterior) => {
       return (
@@ -151,7 +152,7 @@ export default function FerramentasNota({
     });
   };
 
-  // Não remove a notação
+  // Criar sistema para remover a notação
   const adicionarImagem = () => {
     setTexto((textoAnterior) => {
       return (
@@ -164,6 +165,7 @@ export default function FerramentasNota({
     });
   };
 
+  // Adicionar em cada linha individualmente
   const adicionarListaBullet = () => {
     setTexto((textoAnterior) => {
       const conteudo = textoAnterior.slice(
@@ -185,6 +187,7 @@ export default function FerramentasNota({
     });
   };
 
+  // Adicionar em cada linha individualmente
   const adicionarListaNumero = () => {
     setTexto((textoAnterior) => {
       const conteudo = textoAnterior.slice(
@@ -206,6 +209,7 @@ export default function FerramentasNota({
     });
   };
 
+  // Adicionar em cada linha individualmente
   const adicionarCitacao = () => {
     setTexto((textoAnterior) => {
       const conteudo = textoAnterior.slice(
